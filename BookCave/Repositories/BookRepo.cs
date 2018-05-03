@@ -53,6 +53,21 @@ namespace BookCave.Repositories
                     PageCount = 514,
                     //Genre List<string>,
                     //Image
+                },
+                new BookListViewModel {
+                    Id = 4,
+                    Title = "Binni Reykir",
+                    // AuthorId
+                    Price = 0.0,
+                    Rating = 0.0,
+                    Quantity = 1000,
+                    Format = "Paperback",
+                    Publisher = "Vintage Books",
+                    PublicationYear = 2011,
+                    Language = "English",
+                    PageCount = 122,
+                    //Genre List<string>,
+                    //Image
                 }
             };
 
