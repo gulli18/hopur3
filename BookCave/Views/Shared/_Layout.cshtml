@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BookCave</title>
+    <title>@ViewData["Title"] BookCave</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -17,8 +18,9 @@
     </environment>
 </head>
 <body>
+    <!--
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -34,14 +36,139 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                </ul>
+                <form class="navbar-form navbar-left" action="/action_page.php">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="search" class="btn btn-success">Search</button>
+                </form>
             </div>
         </div>
     </nav>
+    -->
+    <div class="container" id="nav-bar">
+        <div id="top-nav-bar">
+            <div class="row">
+                <div class="col-lg-1">
+                    <h5>Logo</h5>
+                </div>
+                <div class="col-lg-9">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            All <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Tablet</a></li>
+                                <li><a href="#">Smartphone</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <a href="#">Sign In</a>
+                </div>
+                <div class="col-lg-1">
+                    <button type="button" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <span class="badge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="bottom-nav-bar">
+            <div class="row">
+                <div class="col-lg-2">
+                    <a href="#">Books<span class="caret"></span></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="#">Audiobooks<span class="caret"></span></a>
+                </div>
+                <div class="col-lg-6">
+                    <a href="#">Choose For Me</a>
+                </div>
+                <div class="col-lg-1">
+                    <button type="button" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-euro"></span> Euro <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon">&#xe148;</span> US Dollar</a></li>
+                        <li><a href="#"><span class="glyphicon">&#x20ac;</span> Euro</a></li>
+                        <li><a href="#"><span class="glyphicon">&#xe149;</span> British Pound</a></li>
+                        <li><a href="#"><span class="glyphicon">&#x00a5;</span> Japenese Yen</a></li>
+                        <li><a href="#"><span class="glyphicon">&#xe227;</span> Bitcoin</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-1">
+                    <button type="button" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
+                        English <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Íslenska</a></li>
+                        <li><a href="#">日本語</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - BookCave</p>
+            <div class="row">
+                <div class="col-lg-2">
+                    <h5>Explore</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <hr>
+                        <li><a href="#">Sign Up</a></li>
+                        <hr>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>How Can We Help?</h5>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <hr>
+                        <li><a href="#">Contact Us</a></li>
+                        <hr>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Join Us</h5>
+                    <ul>
+                        <li><a href="#">Jobs</a></li>
+                        <hr>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Important Stuff</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <hr>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <hr>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5>We Accept These Payment Methods</h5>
+                    <p>&copy; 2018 The Book Cave Ltd.</p>
+                    <p>101 Reykjavík, Iceland</p>
+                </div>
+            </div>
         </footer>
     </div>
 
