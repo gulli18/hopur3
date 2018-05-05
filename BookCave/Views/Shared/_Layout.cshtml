@@ -77,9 +77,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1">
+                @await Html.PartialAsync("_LoginPartial")
+              <!--  <div class="col-lg-1">
                     <a href="#">Sign In</a>
-                </div>
+                </div> -->
                 <div class="col-lg-1">
                     <button type="button" class="btn btn-primary">
                         <span class="glyphicon glyphicon-shopping-cart"></span>

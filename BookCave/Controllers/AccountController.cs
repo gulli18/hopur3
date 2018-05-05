@@ -40,7 +40,7 @@ namespace BookCave.Controllers
           if(result.Succeeded)
           {
 
-            await _userManager.AddClaimAsync(user, new Claim("Name", $"{model.FirstName} {model.LastName}"));
+            await _userManager.AddClaimAsync(user, new Claim("Name", $"{model.FirstName}"));
             await _signInManager.SignInAsync(user, false);
 
             return RedirectToAction("Index", "Home");
