@@ -36,7 +36,7 @@ namespace BookCave
             {
                 new Book {
                     Title = "The Hobbit",
-                    // AuthorId
+                    AuthorsId = 0,
                     Price = 0.0,
                     Rating = 0.0,
                     Quantity = 1000,
@@ -50,7 +50,7 @@ namespace BookCave
                 },
                 new Book {
                     Title = "The Shining",
-                    // AuthorId
+                    AuthorsId = 0,
                     Price = 0.0,
                     Rating = 0.0,
                     Quantity = 1000,
@@ -64,7 +64,7 @@ namespace BookCave
                 },
                 new Book {
                     Title = "Fifty Shades of Grey",
-                    // AuthorId
+                    AuthorsId = 0,
                     Price = 0.0,
                     Rating = 0.0,
                     Quantity = 1000,
@@ -78,7 +78,7 @@ namespace BookCave
                 },
                 new Book {
                     Title = "Binni Reykir",
-                    // AuthorId
+                    AuthorsId = 0,
                     Price = 0.0,
                     Rating = 0.0,
                     Quantity = 1000,

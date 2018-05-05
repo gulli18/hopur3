@@ -20,6 +20,7 @@ namespace BookCave.Repositories
                         {
                             Id = a.Id,
                             Title = a.Title,
+                            AuthorsId = a.AuthorsId,
                             Price = a.Price,
                             Rating = a.Rating,
                             Quantity = a.Quantity,

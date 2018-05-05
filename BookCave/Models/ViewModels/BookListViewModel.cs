@@ -5,7 +5,7 @@ namespace BookCave.Models.ViewModels
         public int Id { get; set; }
         public string Title { get; set; }
 
-        // AuthorId
+        public int AuthorsId { get; set; }
         
         public double Price { get; set; }
         public double Rating { get; set; }
