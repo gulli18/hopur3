@@ -11,7 +11,7 @@ namespace BookCave.Services
         {
             _bookRepo = new BookRepo();
         }
-        public List<BookListViewModel> GetAllBooks()
+        public List<BookDetailedViewModel> GetAllBooks()
         {
             var books = _bookRepo.GetAllBooks();
             return books;

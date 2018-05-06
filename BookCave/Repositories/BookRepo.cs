@@ -13,10 +13,10 @@ namespace BookCave.Repositories
         {
             _db = new DataContext();
         }
-        public List<BookListViewModel> GetAllBooks()
+        public List<BookDetailedViewModel> GetAllBooks()
         {
             var books = (from a in _db.Books
-                        select new BookListViewModel
+                        select new BookDetailedViewModel
                         {
                             Id = a.Id,
                             Title = a.Title,

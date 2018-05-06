@@ -1,12 +1,10 @@
 namespace BookCave.Models.ViewModels
 {
-    public class BookListViewModel
+    public class BookDetailedViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
-
-        // AuthorId
-        
+        public int AuthorId { get; set; }
         public double Price { get; set; }
         public double Rating { get; set; }
         public int Quantity { get; set; }
