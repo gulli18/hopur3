@@ -40,6 +40,14 @@ body {
     right: 0px;
 }
 
+#feedback textarea {
+    resize: none;
+}
+
+#feedback a {
+    text-decoration-line: none;
+}
+
 footer .col-lg-2 {
     border: solid;
 }
