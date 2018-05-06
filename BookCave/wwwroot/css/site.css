@@ -1,14 +1,70 @@
-﻿body {
-    padding-top: 50px;
+﻿
+/*
+1) Velja font
+2) Velja lit
+*/
+
+body {
+    border: solid;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
+
 .body-content {
+    border: solid;
+    margin-top: 9%;
     padding-left: 15px;
     padding-right: 15px;
 }
+
+#nav-bar {
+    position: fixed;
+    border: solid;
+    height: 12%;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+#top-nav-bar {
+    border: solid;
+}
+
+#bottom-nav-bar {
+    border: solid;
+}
+
+footer .col-lg-2 {
+    border: solid;
+}
+
+footer .col-lg-3 {
+    border: solid;
+}
+
+
+footer h5 {
+    border: solid;
+}
+
+footer ul {
+    list-style-type: none;
+    border: solid;
+    padding-left: 0%;
+}
+
+footer a {
+    text-decoration-line: none;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: rgb(199, 43, 43);
+}
+
+
 
 /* Carousel */
 .carousel-caption p {
