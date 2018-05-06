@@ -9,20 +9,20 @@ using BookCave.Services;
 
 namespace BookCave.Controllers
 {
-    public class AuthorController : Controller
+    public class BookController : Controller
     {
-        private AuthorService _authorService;
+        private BookService _bookService;
         
-        public AuthorController()
+        public BookController()
         {
-            _authorService = new AuthorService();
+            _bookService = new BookService();
         }
 
         public IActionResult Index()
         {
-            var authors = _authorService.GetAllAuthors();
+            var books = _bookService.GetAllBooks();
 
-            return View(authors);
+            return View(books);
         }
 
         public IActionResult Details(int id)
@@ -32,8 +32,8 @@ namespace BookCave.Controllers
           {
             return View("NotFound");
           }*/
-            var oneAuthor = _authorService.GetAuthor();             
-            return View(oneAuthor);
+            var oneBook = _bookService.GetBook();             
+            return View(oneBook);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace BookCave
         public static void Main(string[] args)
         {
            var host = BuildWebHost(args);
-           SeedData();
+           //SeedData();
            host.Run();
         }
 
@@ -30,70 +30,16 @@ namespace BookCave
         {
             var db = new DataContext();
 
-            if (!db.Books.Any())
+            
+            
+            var initialAuthors = new List<Author>()
             {
-            var initialBooks = new List<Book>()
-            {
-                new Book {
-                    Title = "The Hobbit",
-                    AuthorsId = 0,
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Hardcover",
-                    Publisher = "George Allen & Unwin",
-                    PublicationYear = 1937,
-                    Language = "English",
-                    PageCount = 304,
-                    //Genre List<string>,
-                    //Image
-                },
-                new Book {
-                    Title = "The Shining",
-                    AuthorsId = 0,
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Hardcover",
-                    Publisher = "Doubleday",
-                    PublicationYear = 1977,
-                    Language = "English",
-                    PageCount = 447,
-                    //Genre List<string>,
-                    //Image
-                },
-                new Book {
-                    Title = "Fifty Shades of Grey",
-                    AuthorsId = 0,
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Paperback",
-                    Publisher = "Vintage Books",
-                    PublicationYear = 2011,
-                    Language = "English",
-                    PageCount = 514,
-                    //Genre List<string>,
-                    //Image
-                },
-                new Book {
-                    Title = "Binni Reykir",
-                    AuthorsId = 0,
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Paperback",
-                    Publisher = "Vintage Books",
-                    PublicationYear = 2011,
-                    Language = "English",
-                    PageCount = 122,
-                    //Genre List<string>,
-                    //Image
-                 }
+                new Author {Name = "J.R.R Tolkien", Nationality = "Britain"},
+                new Author {Name = "J.K Rowling", Nationality = "Britain"}
             };
-            db.AddRange(initialBooks);
+            db.AddRange(initialAuthors);
             db.SaveChanges();
-        }
+        
         }
 
     }

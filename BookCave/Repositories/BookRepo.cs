@@ -34,5 +34,27 @@ namespace BookCave.Repositories
                         
             return books;
         }
+
+        public BookListViewModel GetBook()
+        {
+            var oneBook = (from a in _db.Books
+                           select new BookListViewModel
+                           {
+                            Id = a.Id,
+                            Title = a.Title,
+                            AuthorsId = a.AuthorsId,
+                            Price = a.Price,
+                            Rating = a.Rating,
+                            Quantity = a.Quantity,
+                            Format = a.Format,
+                            Publisher = a.Publisher,
+                            PublicationYear = a.PublicationYear,
+                            Language = a.Language,
+                            PageCount = a.PageCount,
+                            Image = a.Image
+                           }).SingleOrDefault();
+            return oneBook;
+        }
+
     }
 }
