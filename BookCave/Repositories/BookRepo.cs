@@ -30,6 +30,24 @@ namespace BookCave.Repositories
             return books;
         }
 
+        public List<BookListViewModel> GetSearchResults(string searchTerm)
+        {
+            var searchResults = (from b in _db.Books
+                                join a in _db.Authors on b.AuthorsId equals a.Id 
+                                where b.Title.ToLower().Contains(searchTerm.ToLower()) || a.Name.ToLower().Contains(searchTerm.ToLower())
+                                select new BookListViewModel
+                                {
+                                    Id = b.Id,
+                                    Title = b.Title,
+                                    Author = a.Name,
+                                    Rating = b.Rating,
+                                    Price = b.Price,
+                                    Image = b.Image
+                                }).ToList();
+
+            return searchResults;
+            }
+
         public BookDetailedViewModel GetBook(int? id)
         {
             var oneBook = (from a in _db.Books
