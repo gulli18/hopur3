@@ -36,12 +36,31 @@ body {
 
 #feedback {
     position: fixed;
-    bottom: 0px;
-    right: 0px;
+    bottom: 1%;
+    right: 1%;
+}
+
+#feedback h4 {
+    text-align: center;
+}
+
+#feedback p {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.modal-backdrop {
+    z-index: -1;
 }
 
 #feedback textarea {
+    margin-top: 1%;
     resize: none;
+    width: 100%;
+}
+
+#feedback form button {
+    margin-top: 2%;
 }
 
 #feedback a {
