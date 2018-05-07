@@ -17,10 +17,16 @@ namespace BookCave.Services
             return books;
         }
 
-        public BookListViewModel GetBook()
+        public BookDetailedViewModel GetBook()
         {
             var oneBook = _bookRepo.GetBook();
             return oneBook;
+        }
+
+        public List<BookListViewModel> getHorror()
+        {
+            var horrormovies = _bookRepo.getHorror();
+            return horrormovies;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace BookCave.Controllers
             return View(authors);
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Details()
         {
       /* 
           if(id == null)

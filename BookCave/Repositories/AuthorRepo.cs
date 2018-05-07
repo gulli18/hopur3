@@ -41,7 +41,7 @@ namespace BookCave.Repositories
     {
       var booklist = (from a in _db.Authors
                           join ar in _db.Books
-                          on a.Id equals ar.AuthorsId
+                          on a.Id equals ar.AuthorsId 
                           select new BookListViewModel
                           {
                             Id = ar.Id,
@@ -50,6 +50,7 @@ namespace BookCave.Repositories
                     
        var oneAuthor = (from a in _db.Authors
                         //where a.Id == id
+                        where a.Nationality == "Britain"
                         select new AuthorListViewModel
                         {
                           Id = a.Id,

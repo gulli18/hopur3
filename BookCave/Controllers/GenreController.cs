@@ -9,26 +9,22 @@ using BookCave.Services;
 
 namespace BookCave.Controllers
 {
-    public class BookController : Controller
+    public class GenreController : Controller
     {
         private BookService _bookService;
         
-        public BookController()
+        public GenreController()
         {
             _bookService = new BookService();
         }
 
-        public IActionResult Index()
+        public IActionResult Horror()
         {
-            var books = _bookService.GetAllBooks();
+             var horrormovies = _bookService.getHorror();
 
-            return View(books);
+            return View(horrormovies);
         }
 
-        public IActionResult Details()
-        {
-            var oneBook = _bookService.GetBook();             
-            return View(oneBook);
-        }
+        
     }
 }
