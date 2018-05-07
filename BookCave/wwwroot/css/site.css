@@ -45,10 +45,13 @@ body {
     text-align: center;
 }
 
-#books-container h6 a {
+#books-container h6 {
     text-align: center;
 }
 
+#book-frontpage p {
+    text-align: center;
+}
 
 /* Footer */
 footer .col-lg-2 {

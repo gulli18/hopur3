@@ -18,10 +18,12 @@
             @foreach (var book in @Model)
             {
                 <div class="col-lg-3">
-                    
-                    <p><a href="#">@book.Title</a></p>
-                    <p>@book.Language</p>
-                    <p>@book.PageCount</p>
+                    <div id="book-frontpage">
+
+                        <p><a href="#">@book.Title</a></p>
+                        <p>by Author</p>
+                        <p>@book.Rating</p>
+                    </div>
                 </div>
             }
         </div>
