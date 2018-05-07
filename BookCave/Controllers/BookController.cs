@@ -27,7 +27,6 @@ namespace BookCave.Controllers
             if(searchTerm != null) {
                 var filteredBooks = (from b in books
                                     where b.Title.ToLower().Contains(searchTerm.ToLower())
-                                    orderby b.Title ascending
                                     select new BookViewModel
                                     {
                                         Id = b.Id,
@@ -36,6 +35,7 @@ namespace BookCave.Controllers
                                         Rating = b.Rating,
                                         Price = b.Price
                                     }).ToList();
+                ViewBag.searchTerm = searchTerm;
                 if(filteredBooks.Any())
                 {
                     return View(filteredBooks);
@@ -43,6 +43,25 @@ namespace BookCave.Controllers
                 return View("Error");
             }
             return View("Error");
+        }
+
+        public IActionResult Top10Rated() 
+        {
+        var books = _bookService.GetAllBooks();
+        var top10 = (from b in books
+                        orderby b.Rating descending
+                        select new BookViewModel
+                        {
+                        Id = b.Id,
+                        Title = b.Title,
+                        Author = b.AuthorId,
+                        Rating = b.Rating,
+                        Price = b.Price
+                        }).Take(10).ToList();
+        if(top10.Any()) {
+            return View(top10);
+        }
+        return View("Error");
         }
     }
 }
