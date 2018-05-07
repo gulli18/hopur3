@@ -25,14 +25,14 @@ namespace BookCave.Controllers
             return View(authors);
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int? id)
         {
-      /* 
+       
           if(id == null)
           {
             return View("NotFound");
-          }*/
-            var oneAuthor = _authorService.GetAuthor();             
+          }
+            var oneAuthor = _authorService.GetAuthor(id);             
             return View(oneAuthor);
         }
     }

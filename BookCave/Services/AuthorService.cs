@@ -18,9 +18,9 @@ namespace BookCave.Services
       return authors;
     }
 
-    public AuthorListViewModel GetAuthor()
+    public AuthorListViewModel GetAuthor(int? id)
     {
-      var oneAuthor = _authorRepo.GetAuthor();
+      var oneAuthor = _authorRepo.GetAuthor(id);
       return oneAuthor;
     }
   }

@@ -17,9 +17,9 @@ namespace BookCave.Services
             return books;
         }
 
-        public BookDetailedViewModel GetBook()
+        public BookDetailedViewModel GetBook(int? id)
         {
-            var oneBook = _bookRepo.GetBook();
+            var oneBook = _bookRepo.GetBook(id);
             return oneBook;
         }
 

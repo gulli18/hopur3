@@ -37,11 +37,12 @@ namespace BookCave.Repositories
           return authors;
     }
 
-    public AuthorListViewModel GetAuthor()
+    public AuthorListViewModel GetAuthor(int? id)
     {
       var booklist = (from a in _db.Authors
                           join ar in _db.Books
                           on a.Id equals ar.AuthorsId 
+                          where a.Id == id
                           select new BookListViewModel
                           {
                             Id = ar.Id,
@@ -49,8 +50,7 @@ namespace BookCave.Repositories
                           }).ToList();
                     
        var oneAuthor = (from a in _db.Authors
-                        //where a.Id == id
-                        where a.Nationality == "Britain"
+                        where a.Id == id
                         select new AuthorListViewModel
                         {
                           Id = a.Id,

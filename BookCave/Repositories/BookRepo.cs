@@ -16,13 +16,12 @@ namespace BookCave.Repositories
         public List<BookListViewModel> GetAllBooks()
         {
             var books = (from a in _db.Books
-                        join ar in _db.Authors
-                          on a.AuthorsId equals ar.Id
-                        select new BookListViewModel
+                         join ar in _db.Authors
+                         on a.AuthorsId equals ar.Id
+                         select new BookListViewModel
                         {
                             Id = a.Id,
                             Title = a.Title,
-                            AuthorsId = a.AuthorsId,
                             Author = ar.Name,
                             Price = a.Price,
                             Rating = a.Rating
@@ -31,20 +30,21 @@ namespace BookCave.Repositories
             return books;
         }
 
-        public BookDetailedViewModel GetBook()
+        public BookDetailedViewModel GetBook(int? id)
         {
             var oneBook = (from a in _db.Books
-                            join ar in _db.Authors
-                          on a.AuthorsId equals ar.Id
-                            where a.Title == "It"
+                           join ar in _db.Authors
+                           on a.AuthorsId equals ar.Id
+                           where a.Id == id
                            select new BookDetailedViewModel
                            {
                             Id = a.Id,
                             Title = a.Title,
-                            AuthorsId = a.AuthorsId,
                             Author = ar.Name,
                             Price = a.Price,
                             Rating = a.Rating,
+                            Format = a.Format,
+                            Language = a.Language,
                             Image = a.Image,
                             PageCount = a.PageCount,
                             ShortDescription = a.ShortDescription,
@@ -63,7 +63,6 @@ namespace BookCave.Repositories
                                 {
                                 Id = a.Id,
                                 Title = a.Title,
-                                AuthorsId = a.AuthorsId,
                                 Price = a.Price,
                                 Rating = a.Rating,
                                 Image = a.Image
