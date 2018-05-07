@@ -17,6 +17,7 @@ body {
     padding-right: 15px;
 }
 
+/* Navbar */
 #nav-bar {
     position: fixed;
     border: solid;
@@ -35,6 +36,21 @@ body {
     border: solid;
 }
 
+.dropdown-menu {
+    background-color: brown;
+}
+
+/* Front page */
+#books-container h3 {
+    text-align: center;
+}
+
+#books-container h6 a {
+    text-align: center;
+}
+
+
+/* Footer */
 footer .col-lg-2 {
     border: solid;
 }
@@ -42,7 +58,6 @@ footer .col-lg-2 {
 footer .col-lg-3 {
     border: solid;
 }
-
 
 footer h5 {
     border: solid;

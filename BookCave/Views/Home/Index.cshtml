@@ -1,8 +1,29 @@
 ﻿@model List<BookCave.Models.ViewModels.BookListViewModel>
 
 <div>
-    @foreach (var book in @Model)
-    {
-        <p>@book.Title</p>
-    }
+    <div class="row" id="books-container">
+        <div class="col-lg-5">
+            <br><hr>
+        </div>
+        <div class="col-lg-2">
+            <h3>Books</h3>
+            <h6><a href="#">See All</a></h6>
+        </div>
+        <div class="col-lg-5">
+            <br><hr>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            @foreach (var book in @Model)
+            {
+                <div class="col-lg-3">
+                    
+                    <p><a href="#">@book.Title</a></p>
+                    <p>@book.Language</p>
+                    <p>@book.PageCount</p>
+                </div>
+            }
+        </div>
+    </div>
 </div>
