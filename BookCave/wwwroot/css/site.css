@@ -6,12 +6,11 @@
 
 body {
     border: solid;
-    padding-bottom: 20px;
 }
 
 
 .body-content {
-    border: solid;
+    
     margin-top: 9%;
     padding-left: 15px;
     padding-right: 15px;
@@ -24,8 +23,7 @@ body {
     height: 12%;
     width: 100%;
     padding-top: 1%;
-    padding-left: 9%;
-    padding-right: 9%;
+    padding-left: 2%;
 }
 
 #top-nav-bar {
@@ -54,32 +52,23 @@ body {
 }
 
 /* Footer */
-footer .col-lg-2 {
-    border: solid;
-}
-
-footer .col-lg-3 {
-    border: solid;
-}
-
-footer h5 {
-    border: solid;
+footer {
+    margin-top: 1%;
+    padding-left: 2%;
 }
 
 footer ul {
     list-style-type: none;
-    border: solid;
+    padding-top: 5%;
     padding-left: 0%;
 }
 
 footer a {
     text-decoration-line: none;
-    color: black;
 }
 
 footer a:hover {
-    text-decoration: underline;
-    color: rgb(199, 43, 43);
+    color: none;
 }
 
 
