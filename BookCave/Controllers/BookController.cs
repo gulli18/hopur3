@@ -37,5 +37,25 @@ namespace BookCave.Controllers
             var oneBook = _bookService.GetBook(id);             
             return View(oneBook);
         }
+
+        public IActionResult Top10Rated ()
+        {
+            var top10Rated = _bookService.GetTop10Rated();
+
+            return View(top10Rated);
+        }
+
+        public IActionResult Top10RatedAudio ()
+        {
+            var top10RatedAudio = _bookService.GetTop10RatedAudio();
+
+            return View(top10RatedAudio);
+        }
+
+        public IActionResult Genre(string genre)
+        {
+            var booksByGenre = _bookService.GetBooksByGenre(genre);
+            return View(booksByGenre);
+        }
     }
 }
