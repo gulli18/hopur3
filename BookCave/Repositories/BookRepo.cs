@@ -20,21 +20,13 @@ namespace BookCave.Repositories
                          on b.AuthorsId equals a.Id
                          select new BookListViewModel
                         {
-<<<<<<< HEAD
-                            Id = a.Id,
-                            Title = a.Title,
-                            Author = ar.Name,
-                            AuthorsId = ar.Id,
-                            Price = a.Price,
-                            Rating = a.Rating
-=======
                             Id = b.Id,
                             Title = b.Title,
                             Author = a.Name,
+                            AuthorsId =a.Id,
                             Format = b.Format,
                             Price = b.Price,
                             Rating = b.Rating
->>>>>>> 47466be07707331da642f3e9274b7e5927adc1ee
                         }).ToList();
                         
             return books;
@@ -67,24 +59,10 @@ namespace BookCave.Repositories
                            where b.Id == id
                            select new BookDetailedViewModel
                            {
-<<<<<<< HEAD
-                            Id = a.Id,
-                            Title = a.Title,
-                            Author = ar.Name,
-                            AuthorsId = ar.Id,
-                            Price = a.Price,
-                            Rating = a.Rating,
-                            Format = a.Format,
-                            Language = a.Language,
-                            Image = a.Image,
-                            PageCount = a.PageCount,
-                            ShortDescription = a.ShortDescription,
-                            PublicationYear = a.PublicationYear,
-                            Publisher = a.Publisher
-=======
                             Id = b.Id,
                             Title = b.Title,
                             Author = a.Name,
+                            AuthorsId = b.Id,
                             Price = b.Price,
                             Rating = b.Rating,
                             Format = b.Format,
@@ -95,7 +73,6 @@ namespace BookCave.Repositories
                             ShortDescription = b.ShortDescription,
                             PublicationYear = b.PublicationYear,
                             Publisher = b.Publisher
->>>>>>> 47466be07707331da642f3e9274b7e5927adc1ee
                            }).SingleOrDefault();
             return oneBook;
         }
