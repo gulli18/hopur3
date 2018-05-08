@@ -1,6 +1,6 @@
 @model List<BookCave.Models.ViewModels.BookListViewModel>
 
-<h2>Search results for @ViewBag.searchTerm</h2>
+<h2>Cart</h2>
 <div>
     @foreach (var book in @Model)
     {
@@ -10,8 +10,5 @@
         <p>@book.Price</p>
         <p>@book.Format</p>
         <img src="@book.Image" alt="book-cover">
-        <form method="post" asp-controller="Cart" asp-action="Index">
-            <button type="submit" name="Id" class="btn btn-primary" value="@book.Id">Add to cart</button>
-        </form>
     }
 </div>

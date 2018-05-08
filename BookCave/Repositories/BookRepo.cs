@@ -51,7 +51,7 @@ namespace BookCave.Repositories
                                 }).ToList();
 
             return searchResults;
-            }
+        }
 
         public BookDetailedViewModel GetBook(int? id)
         {
