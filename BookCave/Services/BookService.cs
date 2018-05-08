@@ -34,5 +34,23 @@ namespace BookCave.Services
             var horrormovies = _bookRepo.getHorror();
             return horrormovies;
         }
+
+        public List<BookListViewModel> GetTop10Rated()
+        {
+            var top10rated = _bookRepo.GetTop10Rated();
+            return top10rated;
+        }
+
+        public List<BookListViewModel> GetTop10RatedAudio()
+        {
+            var top10RatedAudio = _bookRepo.GetTop10RatedAudio();
+            return top10RatedAudio;
+        }
+
+        public List<BookListViewModel> GetBooksByGenre(string genre)
+        {
+            var booksByGenre = _bookRepo.GetBooksByGenre(genre);
+            return booksByGenre;
+        }
     }
 }
