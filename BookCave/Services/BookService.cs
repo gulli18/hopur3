@@ -29,6 +29,12 @@ namespace BookCave.Services
             return oneBook;
         }
 
+        public BookListViewModel GetBookListViewModel(BookListViewModel book)
+        {
+            var addedBook = _bookRepo.GetBookListViewModel(book);
+            return addedBook;
+        }
+
         public List<BookListViewModel> getHorror()
         {
             var horrormovies = _bookRepo.getHorror();
