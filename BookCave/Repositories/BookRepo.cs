@@ -75,6 +75,23 @@ namespace BookCave.Repositories
             return oneBook;
         }
 
+        public BookListViewModel GetBookListViewModel(BookListViewModel book)
+        {
+            var addedBook = (from b in _db.Books
+                            join a in _db.Authors on b.AuthorsId equals a.Id
+                            where b.Id == book.Id
+                            select new BookListViewModel
+                            {
+                                Id = b.Id,
+                                Title = b.Title,
+                                Author = a.Name,
+                                Rating = b.Rating,
+                                Price = b.Price,
+                                Format = b.Format,
+                                Image = b.Image
+                            }).SingleOrDefault();
+            return addedBook;
+        }
 
         public List<BookListViewModel> getHorror()
         {
