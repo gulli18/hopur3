@@ -15,17 +15,26 @@ namespace BookCave.Repositories
         }
         public List<BookListViewModel> GetAllBooks()
         {
-            var books = (from a in _db.Books
-                         join ar in _db.Authors
-                         on a.AuthorsId equals ar.Id
+            var books = (from b in _db.Books
+                         join a in _db.Authors
+                         on b.AuthorsId equals a.Id
                          select new BookListViewModel
                         {
+<<<<<<< HEAD
                             Id = a.Id,
                             Title = a.Title,
                             Author = ar.Name,
                             AuthorsId = ar.Id,
                             Price = a.Price,
                             Rating = a.Rating
+=======
+                            Id = b.Id,
+                            Title = b.Title,
+                            Author = a.Name,
+                            Format = b.Format,
+                            Price = b.Price,
+                            Rating = b.Rating
+>>>>>>> 47466be07707331da642f3e9274b7e5927adc1ee
                         }).ToList();
                         
             return books;
@@ -43,6 +52,7 @@ namespace BookCave.Repositories
                                     Author = a.Name,
                                     Rating = b.Rating,
                                     Price = b.Price,
+                                    Format = b.Format,
                                     Image = b.Image
                                 }).ToList();
 
@@ -51,12 +61,13 @@ namespace BookCave.Repositories
 
         public BookDetailedViewModel GetBook(int? id)
         {
-            var oneBook = (from a in _db.Books
-                           join ar in _db.Authors
-                           on a.AuthorsId equals ar.Id
-                           where a.Id == id
+            var oneBook = (from b in _db.Books
+                           join a in _db.Authors
+                           on b.AuthorsId equals a.Id
+                           where b.Id == id
                            select new BookDetailedViewModel
                            {
+<<<<<<< HEAD
                             Id = a.Id,
                             Title = a.Title,
                             Author = ar.Name,
@@ -70,6 +81,21 @@ namespace BookCave.Repositories
                             ShortDescription = a.ShortDescription,
                             PublicationYear = a.PublicationYear,
                             Publisher = a.Publisher
+=======
+                            Id = b.Id,
+                            Title = b.Title,
+                            Author = a.Name,
+                            Price = b.Price,
+                            Rating = b.Rating,
+                            Format = b.Format,
+                            Language = b.Language,
+                            Genre = b.Genre,
+                            Image = b.Image,
+                            PageCount = b.PageCount,
+                            ShortDescription = b.ShortDescription,
+                            PublicationYear = b.PublicationYear,
+                            Publisher = b.Publisher
+>>>>>>> 47466be07707331da642f3e9274b7e5927adc1ee
                            }).SingleOrDefault();
             return oneBook;
         }
@@ -90,5 +116,60 @@ namespace BookCave.Repositories
             return horrormovies;
         }
 
+        public List<BookListViewModel> GetTop10Rated()
+        {
+            var top10rated = (from b in _db.Books
+                            join a in _db.Authors on b.AuthorsId equals a.Id
+                            where b.Format != "Audiobook"
+                            orderby b.Rating descending
+                            select new BookListViewModel
+                            {
+                                Id = b.Id,
+                                Title = b.Title,
+                                Author = a.Name,
+                                Rating = b.Rating,
+                                Format = b.Format,
+                                Price = b.Price,
+                                Image = b.Image
+                            }).Take(10).ToList();
+            return top10rated;
+        }
+
+        public List<BookListViewModel> GetTop10RatedAudio()
+        {
+            var top10RatedAudio = (from b in _db.Books
+                                    join a in _db.Authors on b.AuthorsId equals a.Id
+                                    where b.Format == "Audiobook"
+                                    orderby b.Rating descending
+                                    select new BookListViewModel
+                                    {
+                                        Id = b.Id,
+                                        Title = b.Title,
+                                        Author = a.Name,
+                                        Rating = b.Rating,
+                                        Format = b.Format,
+                                        Price = b.Price,
+                                        Image = b.Image
+                                    }).Take(10).ToList();
+            return top10RatedAudio;
+        }
+
+        public List<BookListViewModel> GetBooksByGenre(string genre)
+        {
+            var booksByGenre = (from b in _db.Books
+                                join a in _db.Authors on b.AuthorsId equals a.Id
+                                where b.Genre.ToLower() == genre.ToLower() && b.Format != "Audiobook"
+                                select new BookListViewModel
+                                {
+                                    Id = b.Id,
+                                    Title = b.Title,
+                                    Author = a.Name,
+                                    Rating = b.Rating,
+                                    Format = b.Format,
+                                    Price = b.Price,
+                                    Image = b.Image
+                                }).ToList();
+            return booksByGenre;
+        }
     }
 }
