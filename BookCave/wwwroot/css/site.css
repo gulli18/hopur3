@@ -10,7 +10,7 @@ body {
 
 
 .body-content {
-    margin-top: 9%;
+    margin-top: 150px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -19,18 +19,32 @@ body {
 #nav-bar {
     position: fixed;
     border: solid;
-    height: 12%;
+    border-left: none;
+    border-right: none;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    padding-left: 85px;
+    padding-right: 85px;
+    height: 85px;
     width: 100%;
-    padding-top: 1%;
-    padding-left: 2%;
+    z-index: 2;
+    background-color: #ffffff;
+}
+
+#nav-bar h5 {
+    margin-top: 10px;
 }
 
 #top-nav-bar {
-    border: solid;
+    margin-top: 10px;
 }
 
 #bottom-nav-bar {
-    border: solid;
+    margin-top: 10px;
+}
+
+#lang-btn .dropdown-menu {
+    width: 10%;
 }
 
 .dropdown-menu {

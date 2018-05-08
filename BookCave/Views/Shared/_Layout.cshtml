@@ -23,39 +23,85 @@
 -->
 </head>
 <body>
-    <!--
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">BookCave</a>
+    <div class="container" id="nav-bar">
+        <div class="row">
+            <div class="col-lg-1">
+                <h5>INSERT IMAGE OF BOOKCAVE</h5>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                </ul>
-                <form class="navbar-form navbar-left" action="/action_page.php">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+            <div class="col-lg-11">
+                <div id="top-nav-bar">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    All <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">All</a></li>
+                                        <li><a href="#">Tablet</a></li>
+                                        <li><a href="#">Smartphone</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <a href="#">Sign In</a>
+                        </div>
+                        <div class="col-lg-1">
+                            <button type="button" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                <span class="badge">0</span>
+                            </button>
+                        </div>
                     </div>
-                    <button type="search" class="btn btn-success">Search</button>
-                </form>
+                </div>
+                <div id="bottom-nav-bar">
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <a href="#">Books<span class="caret"></span></a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#">Audiobooks<span class="caret"></span></a>
+                        </div>
+                        <div class="col-lg-7">
+                            <a href="#">Choose For Me</a>
+                        </div>
+                        <div class="col-lg-1">
+                            <button type="button" id="euro-btn" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-euro"></span> Euro <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><span class="glyphicon">&#xe148;</span> US Dollar</a></li>
+                                <li><a href="#"><span class="glyphicon">&#x20ac;</span> Euro</a></li>
+                                <li><a href="#"><span class="glyphicon">&#xe149;</span> British Pound</a></li>
+                                <li><a href="#"><span class="glyphicon">&#x00a5;</span> Japenese Yen</a></li>
+                                <li><a href="#"><span class="glyphicon">&#xe227;</span> Bitcoin</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-1">
+                            <button type="button" id="lang-btn" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
+                                English <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Íslenska</a></li>
+                                <li><a href="#">日本語</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    -->
+    </div>
+
+<!--
     <div class="container" id="nav-bar">
         <div id="top-nav-bar">
             <div class="row">
@@ -95,8 +141,14 @@
         </div>
         <div id="bottom-nav-bar">
             <div class="row">
+<<<<<<< HEAD
                 <div class="col-lg-2">
                     <a href="#" id="bottom-nav-books">Books<span class="caret"></span></a>
+=======
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1">
+                    <a href="#">Books<span class="caret"></span></a>
+>>>>>>> navbar
                 </div>
                 <div class="col-lg-2">
                     <a href="#" id="bottom-nav-audio">Audiobooks<span class="caret"></span></a>
@@ -128,6 +180,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
     <div class="container" id="popup-container">
         <hr>
@@ -159,6 +212,9 @@
         </div>
         <hr>
     </div>
+=======
+    </div> -->
+>>>>>>> navbar
     <div class="container body-content">
         @RenderBody()
         <hr>
