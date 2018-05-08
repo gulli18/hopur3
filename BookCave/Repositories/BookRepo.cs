@@ -23,6 +23,7 @@ namespace BookCave.Repositories
                             Id = a.Id,
                             Title = a.Title,
                             Author = ar.Name,
+                            AuthorsId = ar.Id,
                             Price = a.Price,
                             Rating = a.Rating
                         }).ToList();
@@ -59,6 +60,7 @@ namespace BookCave.Repositories
                             Id = a.Id,
                             Title = a.Title,
                             Author = ar.Name,
+                            AuthorsId = ar.Id,
                             Price = a.Price,
                             Rating = a.Rating,
                             Format = a.Format,

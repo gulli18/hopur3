@@ -4,6 +4,6 @@
 <p>Books:</p>
 @foreach(var book in @Model.Book)
 {
-  <p>@book.Title</p>
+  <p><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a></p>
 }
 
