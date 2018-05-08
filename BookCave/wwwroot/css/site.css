@@ -11,8 +11,7 @@ body {
 
 
 .body-content {
-    border: solid;
-    margin-top: 9%;
+    margin-top: 150px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -24,20 +23,28 @@ body {
     border-right: none;
     border-top-width: thin;
     border-bottom-width: thin;
-    padding-left: 30px;
-    padding-right: 30px;
-    height: 95px;
+    padding-left: 85px;
+    padding-right: 85px;
+    height: 85px;
     width: 100%;
     z-index: 2;
     background-color: #ffffff;
 }
 
+#nav-bar h5 {
+    margin-top: 10px;
+}
+
 #top-nav-bar {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #bottom-nav-bar {
     margin-top: 10px;
+}
+
+#lang-btn .dropdown-menu {
+    width: 10%;
 }
 
 footer .col-lg-2 {
