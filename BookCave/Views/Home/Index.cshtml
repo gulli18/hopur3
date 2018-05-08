@@ -3,6 +3,7 @@
 <div>
     @foreach (var book in @Model)
     {
-        <p><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a>, @book.Author</p>
+        <p><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a>,
+        <a asp-controller="Author"asp-action="Details" asp-route-id="@book.AuthorsId">@book.Author</a></p>
     }
 </div>

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using BookCave.Models.ViewModels;
 using BookCave.Repositories;
@@ -57,6 +58,11 @@ namespace BookCave.Services
         {
             var booksByGenre = _bookRepo.GetBooksByGenre(genre);
             return booksByGenre;
+        }
+        public BookDetailedViewModel GetWinner()
+        {
+            var chosenBook = _bookRepo.GetWinner();
+            return chosenBook;
         }
     }
 }
