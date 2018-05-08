@@ -20,18 +20,24 @@ body {
 #nav-bar {
     position: fixed;
     border: solid;
-    height: 12%;
+    border-left: none;
+    border-right: none;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 95px;
     width: 100%;
-    padding-left: 9%;
-    padding-right: 9%;
+    z-index: 2;
+    background-color: #ffffff;
 }
 
 #top-nav-bar {
-    border: solid;
+    margin-top: 20px;
 }
 
 #bottom-nav-bar {
-    border: solid;
+    margin-top: 10px;
 }
 
 footer .col-lg-2 {
