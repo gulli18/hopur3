@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using BookCave.Data;
 using BookCave.Models.ViewModels;
 using System.Linq;
+using System;
+using BookCave.Data.EntityModels;
 
 namespace BookCave.Repositories
 {
@@ -146,5 +148,34 @@ namespace BookCave.Repositories
                                 }).ToList();
             return booksByGenre;
         }
-    }
+        public BookDetailedViewModel GetWinner()
+        {
+            Random rnd = new Random();
+            int randomId = rnd.Next(1, _db.Books.Count());
+            var book = (from b in _db.Books
+                        join a in _db.Authors on b.AuthorsId equals a.Id
+                        where b.Id == randomId
+                        select new BookDetailedViewModel
+                        {
+                            Id = b.Id,
+                            Title = b.Title,
+                            Author = a.Name,
+                            Price = b.Price,
+                            Rating = b.Rating,
+                            Format = b.Format,
+                            Language = b.Language,
+                            Genre = b.Genre,
+                            Image = b.Image,
+                            PageCount = b.PageCount,
+                            ShortDescription = b.ShortDescription,
+                            PublicationYear = b.PublicationYear,
+                            Publisher = b.Publisher
+                        }).SingleOrDefault();
+            while (book == null)
+            {
+                book = GetWinner();
+            }
+            return book;
+        }
+  }
 }
