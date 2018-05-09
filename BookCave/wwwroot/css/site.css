@@ -64,6 +64,64 @@ body {
     padding-top: 5px;
 }
 
+#book-left-container {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: thin;
+}
+
+#book-detail-container {
+    text-align: center;
+}
+
+#book-description-small {
+    margin-top: 20px;
+} 
+
+#book-detail-container .btn {
+    margin-top: 5px;
+}
+
+#book-description {
+    margin-top: 20px;
+}
+
+#book-description h4 {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom-width: thin;
+    padding-bottom: 5px;
+}
+
+#book-right-details {
+    border: solid;
+    border-width: thin;
+    width: 40%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+#book-right-details .btn {
+    width: 100%;
+}
+
+#book-right-details .btn-primary {
+    margin-top: 20px;
+}
+
+#book-right-details .btn-success {
+    margin-top: 30px;
+}
+
 #feedback {
     position: fixed;
     bottom: 10px;
