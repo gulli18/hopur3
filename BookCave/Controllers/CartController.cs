@@ -18,7 +18,7 @@ namespace BookCave.Controllers
         public CartController()
         {
             _bookService = new BookService();
-            _cart = new List<BookListViewModel>();
+            _cart =  new List<BookListViewModel>();
         }
 
         public IActionResult Index()
