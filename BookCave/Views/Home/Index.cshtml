@@ -29,8 +29,8 @@
                         
                         <a href="#"><img src="@book.Image" alt="book-cover" width="130" height="180"></a>
                         <div id="book-details-frontpage">
-                            <p><a href="#">@book.Title</a></p>
-                            <p>by <a href="#">Author</a></p>
+                            <p><a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a></p>
+                            <p>by <a asp-controller="Author" asp-action="Details" asp-route-id="@book.AuthorsId">@book.Author</a></p>
                             <p>@book.Rating</p>
                         </div>
                     </div>

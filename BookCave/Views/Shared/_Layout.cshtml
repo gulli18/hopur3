@@ -35,8 +35,8 @@
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">All</a></li>
-                                        <li><a href="#">Tablet</a></li>
-                                        <li><a href="#">Smartphone</a></li>
+                                        <li><a href="#">Books</a></li>
+                                        <li><a href="#">Textbooks</a></li>
                                     </ul>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Search">
@@ -107,9 +107,9 @@
             <div class="col-lg-4">
                 <ul>
                     <li><strong>Customer Favorites</strong></li>
-                    <li id="book-top"><a href="#">BookCave Top 25</a></li>
+                    <li id="book-top"><a asp-controller="Book" asp-action="Top10Rated">BookCave Top 10</a></li>
                     <li id="book-best"><a href="#">BookCave Bestsellers</a></li>
-                    <li id="book-author"><a href="#">Books by Author</a></li>
+                    <li id="book-author"><a asp-controller="Author" asp-action="Index">Books by Author</a></li>
                     <li id="book-new"><a href="#">New Releases</a></li>
                     <li id="book-month"><a href="#">Top Books of the Month</a></li>
                 </ul>

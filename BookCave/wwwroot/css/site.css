@@ -4,10 +4,6 @@
 2) Velja lit
 */
 
-body {
-    
-}
-
 .body-content {
     margin-top: 110px;
     padding-left: 10px;
@@ -55,41 +51,93 @@ body {
     margin-left: 85px;
     width: 65%;
     padding-left: 40px;
-    
-/* Autor details view */
-#author-left-container {
     border: solid;
-    border-left: none;
     border-top: none;
-    border-bottom: none;
-    border-right-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+    background-color: #ffffff;
+    z-index: 2;
+    top: 85px;
 }
 
-#author-left-container img {
-    margin-top: 20px;
-}
-
-#author-about {
+#popup-container h4 {
     margin-top: 40px;
 }
 
-#author-about p {
+#popup-container ul {
+    margin-top: 30px;
+    list-style-type: none;
+    padding-left: 0%;
+    margin-bottom: 30px;
+}
+
+#popup-container li {
     margin-top: 15px;
 }
 
-#author-books-container {
-    border: solid;
+/* Front page */
+#books-header-container h3 {
+    text-align: center;
+}
+
+#books-header-container h6 {
+    text-align: center;
+}
+
+#book-frontpage-container {
+    margin-top: 15px;
+}
+
+#book-frontpage {
+    text-align: center;
+}
+
+#book-frontpage ul {
     list-style-type: none;
 }
 
-#author-booklist {
+#book-details-frontpage {
+    margin-top: 10px;
+    padding: 0%;
+}
+
+/* Feedback button */
+#feedback {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    z-index: 4;
+}
+
+#feedback h4 {
+    text-align: center;
+}
+
+#feedback p {
+    margin-top: 5px;
+    text-align: center;
+}
+
+#feedback textarea {
+    margin-top: 5px;
+    resize: none;
+    width: 100%;
+}
+
+#feedback form button {
     margin-top: 10px;
 }
 
-#author-booklist li {
-    padding-top: 5px;
+#feedback a {
+    text-decoration-line: none;
 }
 
+.modal-backdrop {
+    z-index: 3;
+}
+
+/* Book details view */
 #book-left-container {
     border: solid;
     border-left: none;
@@ -161,90 +209,64 @@ body {
     text-align: center;
 }
 
-#feedback {
-    position: fixed;
-    bottom: 10px;
-    right: 15px;
-    z-index: 1;
+/* Author details view */
+#author-left-container {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: thin;
 }
 
-#feedback h4 {
+#author-left-container img {
+    margin-top: 20px;
+}
+
+#author-about {
+    margin-top: 40px;
+}
+
+#author-about p {
+    margin-top: 15px;
+}
+
+#author-books-container {
+    border: solid;
+    list-style-type: none;
+}
+
+#author-booklist {
+    margin-top: 10px;
+}
+
+#author-booklist li {
+    padding-top: 5px;
+}
+
+#top10-heading {
+    margin-top: 40px;
+    padding-bottom: 20px;
     text-align: center;
+    border: solid;
+    border-top-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
 }
 
-#feedback p {
-    margin-top: 1%;
+#top10-book-container {
+    margin-top: 70px;
+    padding-bottom: 60px;
     text-align: center;
-}
-
-.modal-backdrop {
-    z-index: -1;
-}
-
-#feedback textarea {
-    margin-top: 1%;
-    resize: none;
-    width: 100%;
-}
-
-#feedback form button {
-    margin-top: 2%;
-}
-
-#feedback a {
-    text-decoration-line: none;
-}
-
-footer .col-lg-2 {
     border: solid;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom-width: thin;
-    background-color: #ffffff;
-    z-index: 2;
-    top: 85px;
 }
 
-#popup-container h4 {
-    margin-top: 40px;
-}
-
-#popup-container ul {
-    margin-top: 30px;
-    list-style-type: none;
-    padding-left: 0%;
-    margin-bottom: 30px;
-}
-
-#popup-container li {
-    margin-top: 15px;
-}
-
-/* Front page */
-#books-header-container h3 {
-    text-align: center;
-}
-
-#books-header-container h6 {
-    text-align: center;
-}
-
-#book-frontpage-container {
-    margin-top: 15px;
-}
-
-#book-frontpage {
-    text-align: center;
-}
-
-#book-frontpage ul {
-    list-style-type: none;
-}
-
-#book-details-frontpage {
-    margin-top: 10px;
-    padding: 0%;
+#top10-book-container h3 a {
+    color: #070707;
 }
 
 /* Footer */
