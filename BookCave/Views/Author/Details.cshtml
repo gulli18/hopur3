@@ -1,9 +1,64 @@
 @model BookCave.Models.ViewModels.AuthorListViewModel
 
+<div class="row">
+    <div class="col-lg-6">
+      <div id="author-left-container">
+        <div class="row">
+          <div class="col-lg-2">
+            <!-- Image -->
+          </div>
+          <div class="col-lg-10">
+            <h3>@Model.Name</h3>
+            <p>@Model.Nationality</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-11">
+            <div id="author-about">
+              <h4>About the Author</h4>
+              <!-- Description -->
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam fugiat 
+                perferendis voluptates repellendus quibusdam magni fuga voluptatibus aliquam. 
+                Quisquam libero quis expedita saepe obcaecati cupiditate eaque consectetur minus? Numquam, nulla?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-6">
+    <div id="author-books-container">
+      <div class="row">
+      <div class="col-lg-12">
+        <h4>Books by Author</h4>
+      </div>
+    </div>
+    <div id="author-booklist">
+      <div class="row">
+      <div class="col-lg-9">
+        @foreach(var book in @Model.Book)
+        {
+          <li><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a></li>
+        }
+      </div>
+      <div class="col-lg-3">
+        <li>1937</li>
+        <li>1940</li>
+        <li>1941</li>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!--
 <p>@Model.Name, Nationality: @Model.Nationality</p>
 <p>Books:</p>
 @foreach(var book in @Model.Book)
 {
   <p><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a></p>
 }
+-->
 

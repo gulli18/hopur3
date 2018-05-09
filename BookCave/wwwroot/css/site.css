@@ -34,6 +34,36 @@ body {
     border: solid;
 }
 
+/* Autor details view */
+#author-left-container {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: thin;
+}
+
+#author-about {
+    margin-top: 40px;
+}
+
+#author-about p {
+    margin-top: 15px;
+}
+
+#author-books-container {
+    border: solid;
+    list-style-type: none;
+}
+
+#author-booklist {
+    margin-top: 10px;
+}
+
+#author-booklist li {
+    padding-top: 5px;
+}
+
 #feedback {
     position: fixed;
     bottom: 1%;
