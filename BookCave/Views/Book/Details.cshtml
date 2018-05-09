@@ -1,13 +1,43 @@
 @model BookCave.Models.ViewModels.BookDetailedViewModel
 
-<img src="@Model.Image" alt="book-cover">
-<p>@Model.Title </p>
-<p>Author: @Model.Author</p>
-<p>Price: @Model.Price$</p>
-<p>Rating: @Model.Rating</p>
-<p>Format: @Model.Format</p>
-<p>Year: @Model.PublicationYear</p>
-<p>Page count:@Model.PageCount </p>
-<p>Language: @Model.Language</p>
-<p>Genre: @Model.Genre</p>
-<p>@Model.ShortDescription</p>
+<div class="container">
+    <div class="row">
+            <div class="col-lg-6">
+                <div id="book-left-container">
+                    <div id="book-detail-container">
+                    <h3>@Model.Title</h3>
+                    <h5>by <a asp-controller="Author" asp-action="Details" asp-route-id="@Model.AuthorsId">
+                    @Model.Author</a>
+                    </h5>
+                    <img src="@Model.Image" alt="book-cover" width="250" height="320" class="img-rounded">
+                    <div id="book-description-small">
+                        <h6>Genre: @Model.Genre</h6>
+                        <h6>Language: @Model.Language</h6>
+                        <h6>Published: @Model.PublicationYear</h6>
+                        <h6>Publisher: @Model.Publisher</h6>
+                        <h6>Page Count: @Model.PageCount</h6>
+                    </div>
+                    <a href="#" class="btn btn-md"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</a>
+                    </div>
+                    <div id="book-description">
+                        <h4>Plot</h5>
+                        <p>@Model.ShortDescription</p>
+                    </div>
+                </div>
+                </div>
+        <div class="col-lg-6">
+            <div id="book-right-details">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-toggle="dropdown">Paperback
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                    
+                    </ul>
+                </div>
+                <!-- <h5>Rating: @Model.Rating</h5> -->
+                <h3>Price: $@Model.Price</h3>
+                <button type="button" class="btn btn-success btn-lg">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

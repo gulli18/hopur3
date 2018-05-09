@@ -64,7 +64,7 @@ namespace BookCave.Repositories
                             Id = b.Id,
                             Title = b.Title,
                             Author = a.Name,
-                            AuthorsId = b.Id,
+                            AuthorsId = a.Id,
                             Price = b.Price,
                             Rating = b.Rating,
                             Format = b.Format,
