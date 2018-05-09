@@ -43,6 +43,10 @@ body {
     border-right-width: thin;
 }
 
+#author-left-container img {
+    margin-top: 20px;
+}
+
 #author-about {
     margin-top: 40px;
 }
