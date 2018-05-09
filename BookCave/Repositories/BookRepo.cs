@@ -64,7 +64,7 @@ namespace BookCave.Repositories
                             Id = b.Id,
                             Title = b.Title,
                             Author = a.Name,
-                            AuthorsId = b.Id,
+                            AuthorsId = a.Id,
                             Price = b.Price,
                             Rating = b.Rating,
                             Format = b.Format,
@@ -170,7 +170,7 @@ namespace BookCave.Repositories
         public BookDetailedViewModel GetWinner()
         {
             Random rnd = new Random();
-            int randomId = rnd.Next(1, _db.Books.Count());
+            int randomId = rnd.Next(1, _db.Books.Count() + 1);
             var book = (from b in _db.Books
                         join a in _db.Authors on b.AuthorsId equals a.Id
                         where b.Id == randomId
