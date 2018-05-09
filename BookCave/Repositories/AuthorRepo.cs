@@ -56,6 +56,7 @@ namespace BookCave.Repositories
                           Id = a.Id,
                           Name = a.Name,
                           Nationality = a.Nationality,
+                          Image = a.Image,
                           Book = booklist
                         }).SingleOrDefault();             
       return oneAuthor;
