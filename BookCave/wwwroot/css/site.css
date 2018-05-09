@@ -135,6 +135,10 @@ body {
     margin-right: auto;
 }
 
+#authors-popular-container h3 {
+    text-align: center;
+}
+
 #feedback {
     position: fixed;
     bottom: 10px;
