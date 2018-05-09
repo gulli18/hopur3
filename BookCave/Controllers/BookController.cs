@@ -65,7 +65,7 @@ namespace BookCave.Controllers
         public IActionResult GetWinner()
         {
             var chosenBook = _bookService.GetWinner();
-            return Json(chosenBook.Title);
+            return Json(chosenBook);
         }
     }
 }
