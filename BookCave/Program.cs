@@ -17,7 +17,7 @@ namespace BookCave
         public static void Main(string[] args)
         {
            var host = BuildWebHost(args);
-           SeedData();
+           //SeedData();
            host.Run();
         }
 
@@ -30,13 +30,14 @@ namespace BookCave
         {
             var db = new DataContext();
 
-            if (!db.Books.Any())
+            
+            
+         var initialBooks = new List<Book>()
             {
-            var initialBooks = new List<Book>()
-            {
-                new Book {
+                new Book 
+                {
                     Title = "The Hobbit",
-                    // AuthorId
+                    AuthorsId = 0,
                     Price = 0.0,
                     Rating = 0.0,
                     Quantity = 1000,
@@ -45,55 +46,15 @@ namespace BookCave
                     PublicationYear = 1937,
                     Language = "English",
                     PageCount = 304,
-                    //Genre List<string>,
-                    //Image
-                },
-                new Book {
-                    Title = "The Shining",
-                    // AuthorId
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Hardcover",
-                    Publisher = "Doubleday",
-                    PublicationYear = 1977,
-                    Language = "English",
-                    PageCount = 447,
-                    //Genre List<string>,
-                    //Image
-                },
-                new Book {
-                    Title = "Fifty Shades of Grey",
-                    // AuthorId
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Paperback",
-                    Publisher = "Vintage Books",
-                    PublicationYear = 2011,
-                    Language = "English",
-                    PageCount = 514,
-                    //Genre List<string>,
-                    //Image
-                },
-                new Book {
-                    Title = "Binni Reykir",
-                    // AuthorId
-                    Price = 0.0,
-                    Rating = 0.0,
-                    Quantity = 1000,
-                    Format = "Paperback",
-                    Publisher = "Vintage Books",
-                    PublicationYear = 2011,
-                    Language = "English",
-                    PageCount = 122,
-                    //Genre List<string>,
-                    //Image
+                    Genre = "Horror",
+                    SoldCount = 500,
+                    Image = "https://i.pinimg.com/736x/5b/db/6b/5bdb6bf7e2b394e945f8a7702d3ff067--hobbit-book-el-hobbit.jpg",
+                    ShortDescription = "Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely traveling any farther than his pantry or cellar. But his contentment is disturbed when the wizard Gandalf and a company of dwarves arrive on his doorstep one day to whisk him away on an adventure. They have launched a plot to raid the treasure hoard guarded by Smaug the Magnificent, a large and very dangerous dragon. Bilbo reluctantly joins their quest, unaware that on his journey to the Lonely Mountain he will encounter both a magic ring and a frightening creature known as Gollum."
                  }
-            };
+                 };
             db.AddRange(initialBooks);
             db.SaveChanges();
-        }
+        
         }
 
     }

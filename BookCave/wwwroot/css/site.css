@@ -55,6 +55,147 @@ body {
     margin-left: 85px;
     width: 65%;
     padding-left: 40px;
+    
+/* Autor details view */
+#author-left-container {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: thin;
+}
+
+#author-left-container img {
+    margin-top: 20px;
+}
+
+#author-about {
+    margin-top: 40px;
+}
+
+#author-about p {
+    margin-top: 15px;
+}
+
+#author-books-container {
+    border: solid;
+    list-style-type: none;
+}
+
+#author-booklist {
+    margin-top: 10px;
+}
+
+#author-booklist li {
+    padding-top: 5px;
+}
+
+#book-left-container {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: thin;
+}
+
+#book-detail-container {
+    text-align: center;
+}
+
+#book-description-small {
+    margin-top: 20px;
+} 
+
+#book-detail-container .btn {
+    margin-top: 5px;
+}
+
+#book-description {
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+#book-description h4 {
+    border: solid;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom-width: thin;
+    padding-bottom: 5px;
+}
+
+#book-right-details {
+    border: solid;
+    border-width: thin;
+    width: 40%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+#book-right-details .btn {
+    width: 100%;
+}
+
+#book-right-details .btn-primary {
+    margin-top: 20px;
+}
+
+#book-right-details .btn-success {
+    margin-top: 30px;
+}
+
+/* Authors index */
+#authors-table {
+    margin-top: 80px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#authors-popular-container h3 {
+    text-align: center;
+}
+
+#feedback {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    z-index: 1;
+}
+
+#feedback h4 {
+    text-align: center;
+}
+
+#feedback p {
+    margin-top: 1%;
+    text-align: center;
+}
+
+.modal-backdrop {
+    z-index: -1;
+}
+
+#feedback textarea {
+    margin-top: 1%;
+    resize: none;
+    width: 100%;
+}
+
+#feedback form button {
+    margin-top: 2%;
+}
+
+#feedback a {
+    text-decoration-line: none;
+}
+
+footer .col-lg-2 {
     border: solid;
     border-top: none;
     border-left: none;

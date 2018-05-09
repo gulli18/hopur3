@@ -11,9 +11,10 @@ using System;
 namespace BookCave.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20180505165150_AuthosTable_added")]
+    partial class AuthosTable_added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,8 +25,6 @@ namespace BookCave.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Image");
 
                     b.Property<string>("Name");
 
@@ -45,8 +44,6 @@ namespace BookCave.Migrations
 
                     b.Property<string>("Format");
 
-                    b.Property<string>("Genre");
-
                     b.Property<string>("Image");
 
                     b.Property<string>("Language");
@@ -62,10 +59,6 @@ namespace BookCave.Migrations
                     b.Property<int>("Quantity");
 
                     b.Property<double>("Rating");
-
-                    b.Property<string>("ShortDescription");
-
-                    b.Property<int>("SoldCount");
 
                     b.Property<string>("Title");
 
