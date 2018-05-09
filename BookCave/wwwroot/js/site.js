@@ -19,7 +19,8 @@ $( document ).ready(function() {
             $("#popup-container").show();
         }
         $("#popup-container h4 a").text("Audiobooks");
-    })
+        $("#book-top").attr("asp-action","Top10RatedAudio");
+    });
 
   $("#winner-button").click(function() {
     $.get("GetWinner", function(data, status){
