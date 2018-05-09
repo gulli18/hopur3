@@ -5,7 +5,7 @@
 */
 
 body {
-    border: solid;
+    
 }
 
 .body-content {
@@ -16,6 +16,7 @@ body {
 
 /* Navbar */
 #nav-bar {
+    top: 0;
     position: fixed;
     border: solid;
     border-top: none;
@@ -51,7 +52,6 @@ body {
 #popup-container {
     display: none;
     position: fixed;
-    margin-top: 85px;
     margin-left: 85px;
     width: 65%;
     padding-left: 40px;
@@ -62,6 +62,7 @@ body {
     border-bottom-width: thin;
     background-color: #ffffff;
     z-index: 2;
+    top: 85px;
 }
 
 #popup-container h4 {
