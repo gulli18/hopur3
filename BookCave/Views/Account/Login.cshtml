@@ -1,5 +1,34 @@
 @model BookCave.Models.ViewModels.LoginViewModel
 
+<div class="container">
+  <div class="row" id="login-heading">
+    <h2>Login</h2>
+  </div>
+  <div class="row" id="login-info">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <form>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" asp-for="RememberMe"> Remember Me
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+</div>
+
+<!--
 <h1>Login</h1>
 <form asp-action="Login" asp-controller="Account" class="form-horizontal">
   <div class="form-group">
@@ -15,3 +44,4 @@
     <input type="submit" class="btn btn-default" value="Login">
   </div>
 </form>
+-->
