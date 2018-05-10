@@ -35,8 +35,8 @@
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">All</a></li>
-                                        <li><a href="#">Books</a></li>
-                                        <li><a href="#">Textbooks</a></li>
+                                        <li><a href="#"><span lang="en">Books</span> <span lang="is">Bækur</span></a></li>
+                                        <li><a href="#"><span lang="en">Audiobooks</span> <span lang="is">Hljóðbækur</span></a></li>
                                     </ul>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Search">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-lg-1">
-                            <a href="#">Sign In</a>
+                            <a href="#"><span lang="en">Sign In</span> <span lang="is">Innskrá</span></a>
                         </div>
                         <div class="col-lg-1">
                             <button type="button" class="btn btn-primary">
@@ -61,35 +61,36 @@
                 <div id="bottom-nav-bar">
                     <div class="row">
                         <div class="col-lg-1">
-                            <a href="#" id="bottom-nav-books">Books<span class="caret"></span></a>
+                            <a href="#" id="bottom-nav-books"><span lang="en">Books</span> <span lang="is">Bækur</span> <span class="caret"></span></a>
                         </div>
                         <div class="col-lg-2">
-                            <a href="#" id="bottom-nav-audio">Audiobooks<span class="caret"></span></a>
+                            <a href="#" id="bottom-nav-audio"><span lang="en">Audiobooks</span> <span lang="is">Hljóðbækur</span> <span class="caret"></span></a>
                         </div>
                         <div class="col-lg-7">
-                            <a href="#">Choose For Me</a>
+                            <a href="#"><span lang="en">Choose For Me</span> <span lang="is">Velja fyrir mig</span></a>
                         </div>
                         <div class="col-lg-1">
                             <button type="button" id="euro-btn" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-euro"></span> Euro <span class="caret"></span>
+                                <span class="glyphicon glyphicon-euro"></span> <span lang="en">Euro</span> <span lang="is">Evrur</span> <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#"><span class="glyphicon">&#xe148;</span> US Dollar</a></li>
-                                <li><a href="#"><span class="glyphicon">&#x20ac;</span> Euro</a></li>
-                                <li><a href="#"><span class="glyphicon">&#xe149;</span> British Pound</a></li>
-                                <li><a href="#"><span class="glyphicon">&#x00a5;</span> Japenese Yen</a></li>
-                                <li><a href="#"><span class="glyphicon">&#xe227;</span> Bitcoin</a></li>
+                                <li><a href="#"><span class="glyphicon">&#xe148;</span> <span lang="en">US Dollar</span> <span lang="is">BNA Dollari</span></a></li>
+                                <li><a href="#"><span class="glyphicon">&#x20ac;</span> <span lang="en">Euro</span> <span lang="is">Evrur</span></a></li>
+                                <!-- <li><a href="#" class="convert" ><span class="glyphicon">&#xe149;</span> British Pound</a></li> -->
                             </ul>
                         </div>
                         <div class="col-lg-1">
+                            <!--
                             <button type="button" id="lang-btn" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
                                 English <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">English</a></li>
                                 <li><a href="#">Íslenska</a></li>
-                                <li><a href="#">日本語</a></li>
                             </ul>
+                            -->
+                            <!-- <button type="button" class="btn btn-default btn-xs">EN</button> -->
+                            <button type="button" class="btn btn-default btn-xs" id="switch-lang-is"> IS </button>
                         </div>
                     </div>
                 </div>
@@ -100,33 +101,42 @@
     <div class="container" id="popup-container">
         <div class="row">
             <div class="col-lg-12">
-                <h4><a href="#">Books</a></h4>
+                <h4><a href="#"><span lang="en">Books</span> <span lang="is">Bækur</span></a></h4>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
                 <ul>
-                    <li><strong>Customer Favorites</strong></li>
-                    <li id="book-top"><a asp-controller="Book" asp-action="Top10Rated">BookCave Top 10</a></li>
+                    <li><strong><span lang="en">Customer Favorites</span> <span lang="is">Eftirlæti Viðskiptavinarins</span></strong></li>
+                    <li id="book-top"><a asp-controller="Book" asp-action="Top10Rated"><span lang="en">BookCave Top 10</span> 
+                        <span lang="is">BookCave Topp 10</span></a>
+                    </li>
                     <li id="book-best"><a href="#">BookCave Bestsellers</a></li>
-                    <li id="book-author"><a asp-controller="Author" asp-action="Index">Books by Author</a></li>
+                    <li id="book-author"><a asp-controller="Author" asp-action="Index"><span lang="en">Books by Author</span>
+                    <span lang="is">Bækur Eftir Höfund</span></a>
+                    </li>
                     <li id="book-new"><a href="#">New Releases</a></li>
                     <li id="book-month"><a href="#">Top Books of the Month</a></li>
                 </ul>
             </div>
             <div class="col-lg-3">
                 <ul>
-                    <li><strong>Subjects</strong></li>
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Comedy</a></li>
-                    <li><a href="#">Sci-Fi</a></li>
-                    <li><a href="#">Thriller</a></li>
+                    <li><strong><span lang="en">Subjects</span> <span lang="is">Tegundir Bóka</span></strong></li>
+                    <li><a href="#"><span lang="en">Adventure</span> <span lang="is">Ævintýrabækur</span></a></li>
+                    <li><a href="#"><span lang="en">Biography</span> <span lang="is">Ævisögur</span></a></li>
+                    <li><a href="#"><span lang="en">Comedy</span> <span lang="is">Gamanbækur</span></a></li>
+                    <li><a href="#"><span lang="en">Horror</span> <span lang="is">Hrollvekjubækur</span></a></li>
+                    <li><a href="#"><span lang="en">Romance</span> <span lang="is">Ástarsögur</span></a></li>
+                    <li><a href="#"><span lang="en">Sci-Fi</span> <span lang="is">Vísindaskáldskapur</span></a></li>
+                    <li><a href="#"><span lang="en">Sport</span> <span lang="is">Íþróttabækur</span></a></li>
+                    <li><a href="#"><span lang="en">Thriller</span> <span lang="is">Spennusögur</span></a></li>
                 </ul>
             </div>
         </div>
     </div>
      <div id="feedback">
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#feedbackModal">Give Feedback
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#feedbackModal">
+            <span lang="en">Give Feedback</span> <span lang="is">Gera Athugasemd</span>
         </button>
         <div id="feedbackModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -134,15 +144,24 @@
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">The BookCave</h4>
-                        <p>How was your experience on our site?</p>
+                        <p>
+                            <span lang="en">How was your experience on our site?</span> 
+                            <span lang="is">Hvernig var reynslan þín á vefsíðunni?</span>
+                        </p>
                         <form action="#" method="POST">
                             <textarea name="feedback-input" id="feedback-input-id" 
                             rows="5" placeholder="Share your feedback here"></textarea>
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span lang="en">Sumbmit</span>
+                                <span lang="is">Senda</span> 
+                            </button>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">
+                            <span lang="en">Privacy Policy</span>
+                            <span lang="is">Friðhelgisstefna</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -158,41 +177,43 @@
             <div class="col-lg-2">
                  <h5>Explore</h5>
                 <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#"><span lang="en">About Us</span> <span lang="is">Um Okkur</span></a></li>
                     <hr>
-                    <li><a href="#">Sign Up</a></li>
-                     <hr>
+                    <li><a href="#"><span lang="en">Sign Up</span> <span lang="is">Nýskrá</span></a></li>
+                    <hr>
                 </ul>
             </div>
             <div class="col-lg-2">
-                <h5>How Can We Help?</h5>
+                <h5><span lang="en">How Can We Help?</span> <span lang="is">Hvernig Getum Við Hjálpað?</span></h5>
                 <ul>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="#"><span lang="en">Help</span> <span lang="is">Hjálp</span></a></li>
                     <hr>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#"><span lang="en">Contact Us</span> <span lang="is">Hafðu Samband</span></a></li>
                     <hr>
                 </ul>
             </div>
             <div class="col-lg-2">
-                    <h5>Join Us</h5>
+                    <h5><span lang="en">Join Us!</span> <span lang="is">Sláðust Í Hópinn!</span></h5>
                     <ul>
-                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#"><span lang="en">Jobs</span> <span lang="is">Störf</span></a></li>
                         <hr>
                     </ul>
                 </div>
             <div class="col-lg-3">
-                <h5>Important Stuff</h5>
+                <h5><span lang="en">Important Stuff</span> <span lang="is">Mikilvægir Hlutir</span></h5>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#"><span lang="en">Privacy Policy</span> <span lang="is">Friðhelgisstefna</span></a></li>
                     <hr>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#"><span lang="en">Terms &amp; Conditions</span> <span lang="is">Skilmálar &amp; Skilyrði</span></a></li>
                     <hr>
                 </ul>
             </div>
             <div class="col-lg-3">
-                <h5>We Accept These Payment Methods</h5>
-                <p>&copy; 2018 The Book Cave Ltd.</p>
-                <p>101 Reykjavík, Iceland</p>
+                <h5><span lang="en">We Accept These Payment Methods</span> 
+                    <span lang="is">Við Tökum Við</span>
+                </h5>
+                <p><span lang="en">&copy; 2018 The BookCave Ltd.</span> <span lang="is">&copy; 2018 The BookCave Ehf.</span></p>
+                <p><span lang="en">101 Reykjavík, Iceland</span> <span lang="is">101 Reykjavík, Ísland</span></p>
             </div>
         </div>
     </footer>

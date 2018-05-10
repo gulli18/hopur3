@@ -36,4 +36,23 @@ $( document ).ready(function() {
     });
   });
 
+  $(function() {
+      $.currency.configure({
+          baseCurreny: "USD",
+          rates: {
+              "GBP": 0.7454
+          }
+      });
+      $(".convert").click(function() {
+          $(".currencies").currency("GBP");
+      });
+  });
+
+  $('[lang="is"]').hide();
+  $("#switch-lang-is").click(function() {
+      $('[lang="is"').toggle();
+      $('[lang="en"').toggle();
+  })
+
+
 });
