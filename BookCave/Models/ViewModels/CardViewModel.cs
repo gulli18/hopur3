@@ -1,6 +1,6 @@
-namespace BookCave.Data.EntityModels
+namespace BookCave.Models.ViewModels
 {
-    public class Card
+  public class CardViewModel
     {
         public int Id { get; set; }
         public string CardHolderName { get; set; }
