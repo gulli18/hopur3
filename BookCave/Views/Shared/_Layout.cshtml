@@ -88,10 +88,10 @@
                     @await Html.PartialAsync("_LoginPartial")
                 </div>
                 <div class="col-lg-1">
-                    <button type="button" class="btn btn-primary">
+                    <a type="button" class="btn btn-primary" asp-controller="Cart" asp-action="Index">
                         <span class="glyphicon glyphicon-shopping-cart"></span>
-                        <span class="badge">0</span>
-                    </button>
+                        <span id="number-of-cartitems" class="badge">0</span>
+                    </a>
                 </div>
             </div>
         </div>
