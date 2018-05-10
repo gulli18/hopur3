@@ -1,4 +1,34 @@
-@model BookCave.Models.ViewModels.ProfileViewModel 
+@model BookCave.Models.ViewModels.ProfileViewModel
+
+<div class="container" id="myAccount-view">
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>My Account</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+      <img src="@Model.Image" alt="profile-picture" width="200" height="200" class="img-circle">
+    </div>
+    <div class="col-lg-4">
+      <h4>@Model.FirstName</h4>
+    </div>
+  </div>
+  <div class="row">
+    <a asp-controller="Account" asp-action="MyProfile" class="btn btn-primary btn-sm">Edit</a>
+  </div>
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="list-group">
+        <a asp-controller="Account" asp-action="MyBillingAddress" class="list-group-item">My Billing Information</a>
+        <a asp-controller="Account" asp-action="MyShippingAddress" class="list-group-item">My Shipping Information</a>
+        <a asp-controller="Account" asp-action="MyCardInformation" class="list-group-item">My Card Information</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
 <h2>My Account</h2>
 <h3>
   <img src="@Model.Image" alt="profile-picture">
@@ -13,3 +43,4 @@
   <a <a asp-area="" asp-controller="Account" asp-action="MyCardInformation">My Card Information</a>
 
 </h3>
+-->

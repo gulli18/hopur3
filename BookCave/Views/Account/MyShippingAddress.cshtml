@@ -1,4 +1,43 @@
 @model BookCave.Models.ViewModels.ShippingAddressViewModel
+
+<div class="container">
+  <div class="row" id="shipping-address">
+    <div class="col-lg-3">
+      <h3>My Shipping Address</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <form asp-controller="Account" asp-action="MyShippingAddress" method="POST">
+        <div class="form-group">
+          <label for="street">Street Address:</label>
+          <input type="text" class="form-control" id="street" asp-for="StreetAdress" 
+          placeholder="Street Address" value="@Model.StreetAdress">
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" class="form-control" id="city" asp-for="TownCity"
+          placeholder="City" value="@Model.TownCity">
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip Code:</label>
+          <input type="text" class="form-control" id="zip" asp-for="Postcode"
+          placeholder="Zip Code" value="@Model.Postcode">
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" class="form-control" id="country" asp-for="Country"
+          placeholder="Country" value="@Model.Country">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Update" class="btn btn-primary btn-lg">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--
 <h2>Shipping Information</h2>
 <form asp-action="MyShippingAddress" asp-controller="Account" class="form-horizontal" method="POST">
   <div class="form-group">
@@ -24,3 +63,4 @@
     <input type="submit" value="Update Shipping Information" class"btn btn-default">
   </div>
 </form>
+-->

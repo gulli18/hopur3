@@ -37,15 +37,17 @@
     <div id="author-booklist">
       <div class="row">
       <div class="col-lg-9">
-        @foreach(var book in @Model.Book)
+        @foreach (var book in @Model.Book)
         {
           <li><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a></li>
         }
       </div>
       <div class="col-lg-3">
+        <!--
         <li>1937</li>
         <li>1940</li>
         <li>1941</li>
+        -->
       </div>
     </div>
     </div>
