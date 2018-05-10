@@ -21,7 +21,17 @@ $("#winner-button").click(function() {
     $("#winner-image").attr("src", data.image);
   });
 });
-<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -249,5 +259,3 @@ function CartIconNumber () {
   console.log('clicked');
   $("#number-of-cartitems").html(countCart());
 };
-=======
->>>>>>> 2ae16db5ad74b86b5e110eb0dd88a6c908721d4c
