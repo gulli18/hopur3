@@ -189,7 +189,62 @@ footer a:hover {
     color: rgb(199, 43, 43);
 }
 
+/* Register */
+#register-heading {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: solid;
+    border-top-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
 
+#register-info {
+    margin-top: 20px;
+}
+
+#register-info .input-group {
+    margin-top: 40px;
+}
+
+#register-info .btn {
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* Log In */
+#login-heading {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: solid;
+    border-top-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#login-info {
+    margin-top: 20px;
+}
+
+#login-info .input-group {
+    margin-top: 40px;
+}
+
+#login-info .checkbox {
+    margin-top: 15px;
+    padding-left: 25px;
+}
+
+#login-info .btn {
+    margin-top: 40px;
+    width: 100%;
+}
 
 /* Carousel */
 .carousel-caption p {
