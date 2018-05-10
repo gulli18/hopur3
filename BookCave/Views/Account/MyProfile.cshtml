@@ -1,5 +1,5 @@
 @model BookCave.Models.ViewModels.ProfileViewModel 
-<br>
+<h2>Profile Information</h2>
 <form asp-action="MyProfile" asp-controller="Account" class="form-horizontal" method="POST">
   <div class="form-group">
     <input type="text" autofocus="autofocus" class="form-control" asp-for="FirstName"
@@ -23,5 +23,8 @@
   <div class="form-group">
     <input type="submit" value="Update Profile" class"btn btn-default">
   </div>
+
+  <a <a asp-area="" asp-controller="Account" asp-action="MyBillingAddress">Billing Address</a>
+  <a <a asp-area="" asp-controller="Account" asp-action="MyShippingAddress">Shipping Address</a>
 
 </form>

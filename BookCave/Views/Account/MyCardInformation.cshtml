@@ -1,0 +1,26 @@
+@model BookCave.Models.ViewModels.CardViewModel
+<h2>Card Information</h2>
+<form asp-action="MyCardInformation" asp-controller="Account" class="form-horizontal" method="POST">
+  <div class="form-group">
+    <input type="text" autofocus="autofocus" class="form-control" asp-for="CardHolderName"
+     placeholder="Cardholder name.." value="@Model.CardHolderName">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" asp-for="CardNumber"
+     placeholder="Cardnumber.." value="@Model.CardNumber">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" asp-for="Month"
+     placeholder="Month" value="@Model.Month">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" asp-for="Year"
+     placeholder="Year" value="@Model.Year">
+   <div class="form-group">
+    <input type="text"  class="form-control" asp-for="SecurityNumber"
+     placeholder="SecurityNumber" value="@Model.SecurityNumber">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Update Card Information" class"btn btn-default">
+  </div>
+</form>
