@@ -12,15 +12,22 @@
 {
   <a class="btn btn-link navbar-btn navbar-link" asp-controller="Account" asp-action="Index">@claim</a>
   <form asp-action="LogOut" asp-controller="Account" method="POST">
+    <button type="submit" class="btn btn-link btn-xs">Log Out</button>
+    <!--
     <ul class="nav navbar-nav navbar-right">
       <li>
         <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
       </li>
     </ul>
+    -->
   </form>
 }
 else
 {
+  <a asp-area="" asp-controller="Account" asp-action="Register" id="register-font">Register</a>
+  <a asp-area="" asp-controller="Account" asp-action="Login" id="login-font">Log in</a>
+
+  <!--
   <ul class="nav navbar-nav navbar-right">
     <li>
       <a asp-area="" asp-controller="Account" asp-action="Register">Register</a>
@@ -29,4 +36,5 @@ else
       <a asp-area="" asp-controller="Account" asp-action="Login">Log in</a>
     </li>
   </ul>
+  -->
 }

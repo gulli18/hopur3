@@ -26,6 +26,7 @@ namespace BookCave.Repositories
                           }).ToList();
 
           var authors = (from a in _db.Authors
+                         orderby a.Name ascending
                          select new AuthorListViewModel
                          {
                            Id = a.Id,

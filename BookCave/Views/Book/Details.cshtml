@@ -1,5 +1,7 @@
 @model BookCave.Models.ViewModels.BookDetailedViewModel
-
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/5star.css">
+</head>
 <div class="container">
     <div class="row">
             <div class="col-lg-6">
@@ -19,7 +21,18 @@
                     </div>
                     <a href="#" class="btn btn-md"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</a>
                     </div>
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="text">4 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="text">1 star</label>
+                    </div>
+                    <div id="write-review">
+                        <textarea rows="4" cols="50"></textarea>
+                    </div>
                     <div id="book-description">
+                        <br/>
                         <h4>Plot</h4>
                         <p>@Model.ShortDescription</p>
                     </div>
@@ -35,7 +48,13 @@
                     </ul>
                 </div>
                 <!-- <h5>Rating: @Model.Rating</h5> -->
-                <h3>Price: $@Model.Price</h3>
+                <h3 class="currencies">
+                    <span class="money">
+                        <abbr class="unit">$</abbr>
+                        <span class="amount">345.12</span>
+                        <abbr class="currency" title="USD"></abbr>
+                    </span>
+                </h3>
                 <button type="button" class="btn btn-success btn-lg">Add to Cart</button>
             </div>
         </div>
