@@ -23,7 +23,7 @@ namespace BookCave.Controllers
 
         public IActionResult Index()
         {
-            return View(_cart);
+            return View();
         }
 
         [HttpPost]
