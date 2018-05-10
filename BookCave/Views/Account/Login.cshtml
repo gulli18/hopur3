@@ -7,14 +7,14 @@
   <div class="row" id="login-info">
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
-      <form>
+      <form asp-controller="Account" asp-action="Login">
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-          <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+          <input asp-for="Email" type="text" class="form-control" placeholder="Email">
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+          <input asp-for="Password" type="password" class="form-control" placeholder="Password">
         </div>
         <div class="checkbox">
           <input type="checkbox" asp-for="RememberMe"> Remember Me

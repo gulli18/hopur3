@@ -27,7 +27,7 @@
             <div class="col-lg-11">
                 <div id="top-nav-bar">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-9">
                             <div class="input-group">
                                 <div class="input-group-btn">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -47,14 +47,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-1">
-                            <a href="#"><span lang="en">Sign In</span> <span lang="is">Innskrá</span></a>
+                        <div class="col-lg-2">
+                            @await Html.PartialAsync("_LoginPartial")
+                            <!-- <a href="#"><span lang="en">Sign In</span> <span lang="is">Innskrá</span></a> -->
                         </div>
                         <div class="col-lg-1">
-                            <button type="button" class="btn btn-primary">
+                            <a type="button" class="btn btn-primary" asp-controller="Cart" asp-action="Index">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>
-                                <span class="badge">0</span>
-                            </button>
+                                <span id="number-of-cartitems" class="badge">0</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -76,20 +77,9 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#"><span class="glyphicon">&#xe148;</span> <span lang="en">US Dollar</span> <span lang="is">BNA Dollari</span></a></li>
                                 <li><a href="#"><span class="glyphicon">&#x20ac;</span> <span lang="en">Euro</span> <span lang="is">Evrur</span></a></li>
-                                <!-- <li><a href="#" class="convert" ><span class="glyphicon">&#xe149;</span> British Pound</a></li> -->
                             </ul>
                         </div>
                         <div class="col-lg-1">
-                            <!--
-                            <button type="button" id="lang-btn" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
-                                English <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">Íslenska</a></li>
-                            </ul>
-                            -->
-                            <!-- <button type="button" class="btn btn-default btn-xs">EN</button> -->
                             <button type="button" class="btn btn-default btn-xs" id="switch-lang-is"> IS </button>
                         </div>
                     </div>
@@ -113,10 +103,8 @@
                     </li>
                     <li id="book-best"><a href="#">BookCave Bestsellers</a></li>
                     <li id="book-author"><a asp-controller="Author" asp-action="Index"><span lang="en">Books by Author</span>
-                    <span lang="is">Bækur Eftir Höfund</span></a>
+                        <span lang="is">Bækur Eftir Höfund</span></a>
                     </li>
-                    <li id="book-new"><a href="#">New Releases</a></li>
-                    <li id="book-month"><a href="#">Top Books of the Month</a></li>
                 </ul>
             </div>
             <div class="col-lg-3">
@@ -175,16 +163,16 @@
     <footer>
         <div class="row">
             <div class="col-lg-2">
-                 <h5>Explore</h5>
+                 <h5><span lang="en">Explore</span> <span lang="is">Skoða</span></h5>
                 <ul>
                     <li><a href="#"><span lang="en">About Us</span> <span lang="is">Um Okkur</span></a></li>
                     <hr>
-                    <li><a href="#"><span lang="en">Sign Up</span> <span lang="is">Nýskrá</span></a></li>
+                    <li><a asp-controller="Account" asp-action="Register"><span lang="en">Sign Up</span> <span lang="is">Nýskrá</span></a></li>
                     <hr>
                 </ul>
             </div>
             <div class="col-lg-2">
-                <h5><span lang="en">How Can We Help?</span> <span lang="is">Hvernig Getum Við Hjálpað?</span></h5>
+                <h5><span lang="en">How Can We Help?</span> <span lang="is">Getum Við Hjálpað?</span></h5>
                 <ul>
                     <li><a href="#"><span lang="en">Help</span> <span lang="is">Hjálp</span></a></li>
                     <hr>
@@ -193,7 +181,7 @@
                 </ul>
             </div>
             <div class="col-lg-2">
-                    <h5><span lang="en">Join Us!</span> <span lang="is">Sláðust Í Hópinn!</span></h5>
+                    <h5><span lang="en">Join Us!</span> <span lang="is">Gakktu Til Liðs Við Okkur!</span></h5>
                     <ul>
                         <li><a href="#"><span lang="en">Jobs</span> <span lang="is">Störf</span></a></li>
                         <hr>

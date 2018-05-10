@@ -231,7 +231,6 @@
 }
 
 #author-books-container {
-    border: solid;
     list-style-type: none;
 }
 
@@ -269,6 +268,60 @@
     color: #070707;
 }
 
+/* My account view */
+#myAccount-view h3 {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+#myAccount-view .btn {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+#myAccount-view .list-group {
+    margin-top: 40px;
+}
+
+#billing-address h3 {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+#shipping-address h3 {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+#card-information h3 {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
 /* Footer */
 footer {
     margin-top: 20px;
@@ -293,6 +346,7 @@ footer a:hover {
 
 /* Register */
 #register-heading {
+    margin-top: 30px;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -317,8 +371,17 @@ footer a:hover {
     width: 100%;
 }
 
+#register-font {
+    padding-left: 10px;
+}
+
+#login-font {
+    margin-left: 20px;
+}
+
 /* Log In */
 #login-heading {
+    margin-top: 30px;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
