@@ -22,13 +22,6 @@ $( document ).ready(function() {
         $("#book-top").attr("asp-action","Top10RatedAudio");
     });
 
-  $("#winner-button").click(function() {
-    $.get("GetWinner", function(data, status){
-      console.log(data);
-      $("#winner-book").append(data.title);
-    });
-  });
-
   $("#authorsInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#authorsTable tr").filter(function() {
@@ -55,26 +48,29 @@ $( document ).ready(function() {
   })
 
   var buttonclick = 0;
-    $("#winner-button").click(function() {
+  document.getElementById("winner-image").style.visibility = "hidden";
+  $("#winner-button").click(function() {
     $.get("GetWinner", function(data, status){
-        buttonclick++;
-
-        if(buttonclick > 0) 
-        {
-            $("#winner-title").text('');
-            $("#winner-author").text('');
-            $("#winner-rating").text('');
-            $("#winner-price").text('');
-            $("#winner-format").text('');
-        }
-            $("#winner-title").append(data.title);
-            $("#winner-author").append(data.author);
-            $("#winner-rating").append(data.rating);
-            $("#winner-price").append(data.price);
-            $("#winner-format").append(data.format);
-            $("#winner-image").attr("src", data.image);
+      buttonclick++;
+      if(buttonclick > 0) 
+      {
+        $("#winner-title").text('');
+        $("#winner-author").text('');
+        $("#winner-rating").text('');
+        $("#winner-price").text('');
+        $("#winner-format").text('');
+      }
+      document.getElementById("winner-image").style.visibility = "visible";
+      $("#winner-image").attr("src", data.image);
+      $("#winner-title").append(data.title);
+      $("#winner-author").append(data.author);
+      $("#winner-rating").append(data.rating);
+      $("#winner-price").append(data.price);
+      $("#winner-format").append(data.format);
     });
-});
+  });
+
+
 });
 
 
