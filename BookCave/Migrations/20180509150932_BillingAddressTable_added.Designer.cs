@@ -11,9 +11,10 @@ using System;
 namespace BookCave.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20180509150932_BillingAddressTable_added")]
+    partial class BillingAddressTable_added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,50 +95,6 @@ namespace BookCave.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Books");
-                });
-
-            modelBuilder.Entity("BookCave.Data.EntityModels.Card", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CardHolderName");
-
-                    b.Property<int>("CardNumber");
-
-                    b.Property<int>("Month");
-
-                    b.Property<int>("SecurityNumber");
-
-                    b.Property<string>("UserId");
-
-                    b.Property<int>("Year");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cards");
-                });
-
-            modelBuilder.Entity("BookCave.Data.EntityModels.ShippingAdress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Country");
-
-                    b.Property<string>("PropertyName");
-
-                    b.Property<string>("StreetAdress");
-
-                    b.Property<string>("TownCity");
-
-                    b.Property<string>("UserId");
-
-                    b.Property<int>("ZipPostcode");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ShippingAdresses");
                 });
 #pragma warning restore 612, 618
         }
