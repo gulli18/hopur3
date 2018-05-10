@@ -1,0 +1,15 @@
+@model BookCave.Models.ViewModels.ProfileViewModel 
+<h2>My Account</h2>
+<h3>
+  <img src="@Model.Image" alt="profile-picture">
+  Hello @Model.FirstName
+  <br>
+  <a <a asp-area="" asp-controller="Account" asp-action="MyProfile">Edit my profile</a>
+  <br>
+  <a <a asp-area="" asp-controller="Account" asp-action="MyBillingAddress">My Billing Information</a>
+  <br>
+  <a <a asp-area="" asp-controller="Account" asp-action="MyShippingAddress">My Shipping Information</a>
+  <br>
+  <a <a asp-area="" asp-controller="Account" asp-action="MyCardInformation">My Card Information</a>
+
+</h3>

@@ -11,9 +11,10 @@ using System;
 namespace BookCave.Migrations.AuthenticationDb
 {
     [DbContext(typeof(AuthenticationDbContext))]
-    partial class AuthenticationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180509154036_ExtendingASPNETUSER")]
+    partial class ExtendingASPNETUSER
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,21 +32,7 @@ namespace BookCave.Migrations.AuthenticationDb
 
                     b.Property<string>("BillingAdressId");
 
-                    b.Property<string>("BillingCountry");
-
-                    b.Property<string>("BillingPropertyName");
-
-                    b.Property<string>("BillingStreetAdress");
-
-                    b.Property<string>("BillingTownCity");
-
-                    b.Property<int>("BillingZipPostcode");
-
-                    b.Property<string>("CardHolderName");
-
                     b.Property<string>("CardInformationId");
-
-                    b.Property<int>("CardNumber");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -67,8 +54,6 @@ namespace BookCave.Migrations.AuthenticationDb
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<int>("Month");
-
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
 
@@ -83,28 +68,14 @@ namespace BookCave.Migrations.AuthenticationDb
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
-                    b.Property<int>("SecurityNumber");
-
                     b.Property<string>("SecurityStamp");
 
                     b.Property<string>("ShippingAdressId");
-
-                    b.Property<string>("ShippingCountry");
-
-                    b.Property<string>("ShippingPropertyName");
-
-                    b.Property<string>("ShippingStreetAdress");
-
-                    b.Property<string>("ShippingTownCity");
-
-                    b.Property<int>("ShippingZipPostcode");
 
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
-
-                    b.Property<int>("Year");
 
                     b.HasKey("Id");
 
