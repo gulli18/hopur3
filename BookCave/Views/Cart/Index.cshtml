@@ -1,14 +1,9 @@
 @model List<BookCave.Models.ViewModels.BookListViewModel>
 
-<h2>Cart</h2>
-<div>
-    @foreach (var book in @Model)
-    {
-        <p>@book.Title</p>
-        <p>@book.Author</p>
-        <p>@book.Rating</p>
-        <p>@book.Price</p>
-        <p>@book.Format</p>
-        <img src="@book.Image" alt="book-cover">
-    }
+<h2 id="cart-header">Shopping Cart</h2>
+
+<!--<button type="button" id="display" class="btn btn-primary">Click me</button> -->
+
+<div id="show-cart">
+
 </div>
