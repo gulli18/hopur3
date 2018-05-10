@@ -1,14 +1,32 @@
 @model List<BookCave.Models.ViewModels.BookListViewModel>
 
-<h2>Top 10 highest rated books</h2>
-<div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div id="top10-heading">
+                <h2>Top 10 Rated Books</h2>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
     @foreach (var book in @Model)
     {
-        <p>@book.Title</p>
-        <p>@book.Author</p>
-        <p>@book.Rating</p>
-        <p>@book.Price</p>
-        <p>@book.Format</p>
-        <img src="@book.Image" alt="book-cover">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div id="top10-book-container">
+                    <h3><a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a></h3>
+                    <h5>by <a href="#">
+                        @book.Author</a>
+                    </h5>
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id"><img src="@book.Image" alt="book-cover" width="250" height="320" class="img-rounded"></a>
+                    <h2>Rating: @book.Rating</h2>
+                    <a href="#" class="btn btn-md"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</a>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
     }
+    <br><br><br>
 </div>

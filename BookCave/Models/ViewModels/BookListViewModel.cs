@@ -15,4 +15,9 @@ namespace BookCave.Models.ViewModels
        
         public string Image { get; set; }
     }
+
+
+    /*public class Bookecategories {
+        public listi<BookListViewModel> thriller
+    }*/
 }
