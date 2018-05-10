@@ -139,6 +139,25 @@ $("#show-cart").on('click', ".delete-item", function() {
   displayCart();
 });
 
+$("#show-cart").on('click', ".plus-item", function() {
+  var plusId = $(this).attr("data-id");
+  plusCartItem(plusId);
+  CartIconNumber();
+  displayCart();
+})
+
+$("#show-cart").on('click', ".subtract-item", function() {
+  var subtractId = $(this).attr("data-id");
+  removeBookFromCart(subtractId);
+  CartIconNumber();
+  displayCart();
+})
+
+$("#clear-button").click(function(event) {
+  clearCart();
+  displayCart();
+})
+
 function addToCart(book) {
   for(var i in cart) {
     if(cart[i].id === book.id) {
@@ -150,10 +169,19 @@ function addToCart(book) {
   cart.push(book);
   saveCart();
 }
-
-function removeBookFromCart(book) {
+function plusCartItem(id) {
   for(var i in cart) {
-    if(cart[i].id === book.id) {
+    if(cart[i].id === id) {
+      cart[i].count++;
+      saveCart();
+      return;
+    }
+  }
+}
+
+function removeBookFromCart(id) {
+  for(var i in cart) {
+    if(cart[i].id === id) {
       cart[i].count--;
       if(cart[i].count == 0) {
         cart.splice(i, 1);
@@ -204,8 +232,7 @@ function listCart() {
     for(var p in item) {
       itemCopy[p] = item[p];
     }
- //   itemCopy.total = item.price;
- //   itemCopy.total = (item.price * item.count).toFixed(2);
+    itemCopy.total = (item.price * item.count).toFixed(2);
     cartCopy.push(itemCopy);
   }
   return cartCopy;
@@ -231,6 +258,8 @@ function displayCart() {
 
   if(countCart() === 0) {
     $("#cart-header").html("Shopping cart is empty!");
+    $("#clear-button").toggle();
+    $("#checkout").toggle();
   }
   else {
     $("#cart-header").html("Shopping cart:");
@@ -247,6 +276,10 @@ function displayCart() {
               "<p>" + cartArray[i].price + "</p>" +
               "<p>" + cartArray[i].count + "</p>" + 
               "<div>" + 
+              "<button type='button' class='plus-item btn btn-success' data-id='" + cartArray[i].id + 
+              "'>+</button>" +
+              "<button type='button' class='subtract-item btn btn-danger' data-id='" + cartArray[i].id + 
+              "'>-</button>" +
               "<button type='button' class='delete-item btn btn-danger' data-id='" + cartArray[i].id + 
               "'>Remove</button>" + "</div>" + "</div>";
   }
@@ -256,6 +289,5 @@ function displayCart() {
 //glyphicon shopping cart icon
 
 function CartIconNumber () {
-  console.log('clicked');
   $("#number-of-cartitems").html(countCart());
 };
