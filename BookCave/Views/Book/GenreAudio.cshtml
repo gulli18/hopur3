@@ -1,0 +1,14 @@
+@model List<BookCave.Models.ViewModels.BookListViewModel>
+
+<h2>Genre</h2>
+<div>
+    @foreach (var book in @Model)
+    {
+        <p>@book.Title</p>
+        <p>@book.Author</p>
+        <p>@book.Rating</p>
+        <p>@book.Price</p>
+        <p>@book.Format</p>
+        <img src="@book.Image" alt="book-cover">
+    }
+</div>
