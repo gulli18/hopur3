@@ -1,6 +1,7 @@
 ﻿// Write your JavaScript code.
 $( document ).ready(function() {
     var show = false;
+    
     $("#bottom-nav-books").mouseover(function() {
         if (!show) {
             $("#popup-container").show();
@@ -19,7 +20,15 @@ $( document ).ready(function() {
             $("#popup-container").show();
         }
         $("#popup-container h4 a").text("Audiobooks");
-        $("#book-top").attr("asp-action","Top10RatedAudio");
+        $("#popup-container #book-top a").attr("href","http://localhost:5000/Book/Top10RatedAudio");
+        $("#subject-list #advent").attr("href","http://localhost:5000/book/genreaudio?genre=Adventure");
+        $("#subject-list #bio").attr("href","http://localhost:5000/book/genreaudio?genre=Biography");
+        $("#subject-list #com").attr("href","http://localhost:5000/book/genreaudio?genre=Comedy");
+        $("#subject-list #horr").attr("href","http://localhost:5000/book/genreaudio?genre=Horror");
+        $("#subject-list #rom").attr("href","http://localhost:5000/book/genreaudio?genre=Romance");
+        $("#subject-list #sci").attr("href","http://localhost:5000/book/genreaudio?genre=Sci-fi");
+        $("#subject-list #sport").attr("href","http://localhost:5000/book/genreaudio?genre=Sport");
+        $("#subject-list #thril").attr("href","http://localhost:5000/book/genreaudio?genre=Thriller");
     });
 
   $("#authorsInput").on("keyup", function() {
@@ -43,46 +52,23 @@ $( document ).ready(function() {
 
   $('[lang="is"]').hide();
   $("#switch-lang-is").click(function() {
+
       $('[lang="is"').toggle();
       $('[lang="en"').toggle();
   })
 
-  var buttonclick = 0;
-  //Document.getElementById("winner-image").style.visibility = "hidden";
-  $("#chooseforme").click(function() {
-    $.get("GetWinner", function(data, status){
-      buttonclick++;
-      if(buttonclick > 0) 
-      {
-        $("#winner-title").text('');
-        $("#winner-author").text('');
-        $("#winner-rating").text('');
-        $("#winner-price").text('');
-        $("#winner-format").text('');
-      }
-  //Document.getElementById("winner-image").style.visibility = "visible";
-      $("#winner-image").attr("src", data.image);
-      $("#winner-title").append(data.title);
-      $("#winner-author").append(data.author);
-      $("#winner-rating").append(data.rating);
-      $("#winner-price").append(data.price);
-      $("#winner-format").append(data.format);
-    });
-  });
+  if (location.href == "http://localhost:5000/Book/chooseforme") {
+    getwinner();
+  };
+  
+  function getwinner() {
+    $.get("GetWinner", function(data, status) {
+      $("#winner-title").text('');
+      $("#winner-author").text('');
+      $("#winner-rating").text('');
+      $("#winner-price").text('');
+      $("#winner-format").text('');
 
-  // Document.getElementById("winner-image").style.visibility = "hidden";
-  $("#winner-button").click(function() {
-    $.get("GetWinner", function(data, status){
-      buttonclick++;
-      if(buttonclick > 0) 
-      {
-        $("#winner-title").text('');
-        $("#winner-author").text('');
-        $("#winner-rating").text('');
-        $("#winner-price").text('');
-        $("#winner-format").text('');
-      }
-  // Document.getElementById("winner-image").style.visibility = "visible";
       $("#winner-image").attr("src", data.image);
       $("#winner-image").attr("title", data.price);
       $("#winner-title").append(data.title);
@@ -91,7 +77,11 @@ $( document ).ready(function() {
       $("#winner-author").attr("title", data.format);
       $("#winner-rating").append(data.rating);
     });
-  });
+  };
+
+  $("#winner-button").click(getwinner);
+
+
 
 
 

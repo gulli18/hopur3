@@ -23,7 +23,7 @@
     padding-right: 85px;
     height: 85px;
     width: 100%;
-    z-index: 2;
+    z-index: 10;
     background-color: #ffffff;
 }
 
@@ -44,6 +44,17 @@
     margin-top: 10px;
 }
 
+#nav-login {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-top: 7px;
+}
+
+#nav-login .btn-xs {
+    margin-left: 45px;
+}
+
 /* Popup container */
 #popup-container {
     display: none;
@@ -57,7 +68,7 @@
     border-right: none;
     border-bottom-width: thin;
     background-color: #ffffff;
-    z-index: 2;
+    z-index: 10;
     top: 85px;
 }
 
@@ -107,7 +118,7 @@
     position: fixed;
     bottom: 10px;
     right: 15px;
-    z-index: 4;
+    z-index: 12;
 }
 
 #feedback h4 {
@@ -134,7 +145,7 @@
 }
 
 .modal-backdrop {
-    z-index: 3;
+    z-index: 11;
 }
 
 /* Book details view */
@@ -453,11 +464,6 @@ footer a:hover {
     margin-top: 70px;
     padding-bottom: 60px;
     text-align: center;
-    border: solid;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom-width: thin;
 }
 
 #chooseforme-book-container h3 a {

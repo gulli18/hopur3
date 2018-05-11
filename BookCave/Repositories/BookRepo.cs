@@ -29,7 +29,8 @@ namespace BookCave.Repositories
                             Format = b.Format,
                             Price = b.Price,
                             Rating = b.Rating,
-                            Image = b.Image
+                            Image = b.Image,
+                            PublicationYear = b.PublicationYear
                         }).ToList();
                         
             return books;

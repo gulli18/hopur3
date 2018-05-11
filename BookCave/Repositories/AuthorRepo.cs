@@ -22,7 +22,8 @@ namespace BookCave.Repositories
                           select new BookListViewModel
                           {
                             Id = ar.Id,
-                            Title = ar.Title
+                            Title = ar.Title,
+                            PublicationYear = ar.PublicationYear
                           }).ToList();
 
           var authors = (from a in _db.Authors
