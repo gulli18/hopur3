@@ -2,13 +2,37 @@
 
 <div class="container" id="myAccount-view">
   <div class="row">
+    <div class="col-lg-6" id="myAccount-view-left">
+      <h3 id="myAccount-heading">My Account</h3>
+      <div id="myAccount-details">
+        <img src="@Model.Image" alt="profile-picture" width="100" height="100" class="img-circle">
+        <h3>@Model.FirstName</h3>
+        <h5>Age: @Model.Age</h5>
+        <h5>Favorite Book: @Model.FavoriteBook</h5>
+      </div>
+      <a asp-controller="Account" asp-action="MyProfile" class="btn btn-primary btn-sm">Edit</a>
+    </div>
+    <div class="col-lg-6" id="myAccount-view-right">
+      <div class="list-group">
+        <a asp-controller="Account" asp-action="MyBillingAddress" class="list-group-item">My Billing Information</a>
+        <a asp-controller="Account" asp-action="MyShippingAddress" class="list-group-item">My Shipping Information</a>
+        <a asp-controller="Account" asp-action="MyCardInformation" class="list-group-item">My Card Information</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="container" id="myAccount-view">
+  <div class="row">
     <div class="col-lg-3">
       <h3>My Account</h3>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-2">
-      <img src="@Model.Image" alt="profile-picture" width="200" height="200" class="img-circle">
+    <div class="col-lg-1">
+      <img src="@Model.Image" alt="profile-picture" width="80" height="80" class="img-circle">
     </div>
     <div class="col-lg-4">
       <h4>@Model.FirstName</h4>
@@ -28,7 +52,7 @@
   </div>
 </div>
 
-<!--
+
 <h2>My Account</h2>
 <h3>
   <img src="@Model.Image" alt="profile-picture">
