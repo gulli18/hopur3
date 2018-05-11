@@ -40,6 +40,7 @@ namespace BookCave.Repositories
             var searchResults = (from b in _db.Books
                                 join a in _db.Authors on b.AuthorsId equals a.Id 
                                 where b.Title.ToLower().Contains(searchTerm.ToLower()) || a.Name.ToLower().Contains(searchTerm.ToLower())
+                                orderby b.Title ascending
                                 select new BookListViewModel
                                 {
                                     Id = b.Id,
@@ -149,6 +150,44 @@ namespace BookCave.Repositories
                                         Image = b.Image
                                     }).Take(10).ToList();
             return top10RatedAudio;
+        }
+
+        public List<BookListViewModel> GetBestSellers()
+        {
+            var top10Sold = (from b in _db.Books
+                            join a in _db.Authors on b.AuthorsId equals a.Id
+                            where b.Format != "Audiobook"
+                            orderby b.SoldCount descending
+                            select new BookListViewModel
+                            {
+                                Id = b.Id,
+                                Title = b.Title,
+                                Author = a.Name,
+                                Rating = b.Rating,
+                                Format = b.Format,
+                                Price = b.Price,
+                                Image = b.Image
+                            }).Take(10).ToList();
+            return top10Sold;
+        }
+
+        public List<BookListViewModel> GetBestSellersAudio()
+        {
+            var top10SoldAudio = (from b in _db.Books
+                            join a in _db.Authors on b.AuthorsId equals a.Id
+                            where b.Format == "Audiobook"
+                            orderby b.SoldCount descending
+                            select new BookListViewModel
+                            {
+                                Id = b.Id,
+                                Title = b.Title,
+                                Author = a.Name,
+                                Rating = b.Rating,
+                                Format = b.Format,
+                                Price = b.Price,
+                                Image = b.Image
+                            }).Take(10).ToList();
+            return top10SoldAudio;
         }
 
         public List<BookListViewModel> GetBooksByGenre(string genre)

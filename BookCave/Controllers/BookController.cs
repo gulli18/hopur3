@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BookCave.Models;
 using BookCave.Services;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace BookCave.Controllers
 {
@@ -27,15 +28,21 @@ namespace BookCave.Controllers
                 if(searchResults.Any()) {
                      return View(searchResults);
                 }
+                ViewBag.header = "Your search did not return any results!";
                 return View("NotFound");
             }
+            ViewBag.header = "Your search did not return any results!";
             return View("NotFound");
         }
 
         public IActionResult Details(int? id)
         {
-            var oneBook = _bookService.GetBook(id);             
-            return View(oneBook);
+            var oneBook = _bookService.GetBook(id); 
+            if(oneBook != null) {
+                return View(oneBook);
+            }
+            ViewBag.header = "Book not found!";
+            return View("Notfound");
         }
 
         public IActionResult Top10Rated ()
@@ -52,17 +59,44 @@ namespace BookCave.Controllers
             return View(top10RatedAudio);
         }
 
+        public IActionResult BestSellers ()
+        {
+            var top10Sold = _bookService.GetBestSellers();
+
+            return View(top10Sold);
+        }
+    
+        public IActionResult BestSellersAudio ()
+        {
+            var top10SoldAudio = _bookService.GetBestSellersAudio();
+
+            return View(top10SoldAudio);
+        }
+
         public IActionResult Genre(string genre)
         {
             var booksByGenre = _bookService.GetBooksByGenre(genre);
-            ViewBag.genreTitle = genre.ToUpper();
-            return View(booksByGenre);
+            
+            if(booksByGenre.Any()) {
+                ViewBag.genreTitle = genre.ToUpper();
+                return View(booksByGenre);
+            }
+
+            ViewBag.header = "Genre not found!";
+            return View("NotFound");
         }
 
         public IActionResult GenreAudio(string genre)
         {
             var audioBooksByGenre = _bookService.GetAudioBooksByGenre(genre);
-            return View(audioBooksByGenre);
+
+            if(audioBooksByGenre.Any()) {
+                ViewBag.genreTitle = genre.ToUpper();
+                return View(audioBooksByGenre);
+            }
+
+            ViewBag.header = "Genre not found!";
+            return View("NotFound");
         }
         public IActionResult ChooseForMe()
         {
@@ -72,7 +106,25 @@ namespace BookCave.Controllers
         public IActionResult GetWinner()
         {
             var chosenBook = _bookService.GetWinner();
-            return Json(chosenBook);
+
+            if(chosenBook != null) {
+                return Json(chosenBook);
+            }
+
+            ViewBag.header = "Book not found!";
+            return View("NotFound");
+        }
+
+        public IActionResult Error()
+        {
+            var exceptionFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+
+            if(exceptionFeature != null) {
+                string path = exceptionFeature.Path;
+                Exception ex = exceptionFeature.Error;
+            }
+            
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
