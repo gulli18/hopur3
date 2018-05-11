@@ -168,6 +168,25 @@ namespace BookCave.Repositories
                                 }).ToList();
             return booksByGenre;
         }
+
+        public List<BookListViewModel> GetAudioBooksByGenre(string genre)
+        {
+            var audioBooksByGenre = (from b in _db.Books
+                                join a in _db.Authors on b.AuthorsId equals a.Id
+                                where b.Genre.ToLower() == genre.ToLower() && b.Format == "Audiobook"
+                                select new BookListViewModel
+                                {
+                                    Id = b.Id,
+                                    Title = b.Title,
+                                    Author = a.Name,
+                                    Rating = b.Rating,
+                                    Format = b.Format,
+                                    Price = b.Price,
+                                    Image = b.Image
+                                }).ToList();
+            return audioBooksByGenre;
+        }
+
         public BookDetailedViewModel GetWinner()
         {
             Random rnd = new Random();

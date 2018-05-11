@@ -7,11 +7,10 @@
             <div class="col-lg-6">
                 <div id="book-left-container">
                     <div id="book-detail-container">
-                    <h3>@Model.Title</h3>
-                    <h5>by <a asp-controller="Author" asp-action="Details" asp-route-id="@Model.AuthorsId">
-                    @Model.Author</a>
+                    <h3 title="@Model.Id" class="book-title">@Model.Title</h3>
+                    <h5>by <a asp-controller="Author" asp-action="Details" asp-route-id="@Model.AuthorsId" class="book-author">@Model.Author</a>
                     </h5>
-                    <img src="@Model.Image" alt="book-cover" width="250" height="320" class="img-rounded">
+                    <img class="book-image" src="@Model.Image" alt="book-cover" width="250" height="320" class="img-rounded">
                     <div id="book-description-small">
                         <h6>Genre: @Model.Genre</h6>
                         <h6>Language: @Model.Language</h6>
@@ -51,11 +50,11 @@
                 <h3 class="currencies">
                     <span class="money">
                         <abbr class="unit">$</abbr>
-                        <span class="amount">345.12</span>
+                        <span title="@Model.Format" class="book-price amount">@Model.Price</span>
                         <abbr class="currency" title="USD"></abbr>
                     </span>
                 </h3>
-                <button type="button" class="btn btn-success btn-lg">Add to Cart</button>
+                <button type="button" class="add-to-cart btn btn-success btn-lg">Add to Cart</button>
             </div>
         </div>
     </div>

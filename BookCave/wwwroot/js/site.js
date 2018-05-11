@@ -48,7 +48,7 @@ $( document ).ready(function() {
   })
 
   var buttonclick = 0;
-  document.getElementById("winner-image").style.visibility = "hidden";
+  //document.getElementById("winner-image").style.visibility = "hidden";
   $("#winner-button").click(function() {
     $.get("GetWinner", function(data, status){
       buttonclick++;
@@ -60,7 +60,7 @@ $( document ).ready(function() {
         $("#winner-price").text('');
         $("#winner-format").text('');
       }
-      document.getElementById("winner-image").style.visibility = "visible";
+  //    document.getElementById("winner-image").style.visibility = "visible";
       $("#winner-image").attr("src", data.image);
       $("#winner-title").append(data.title);
       $("#winner-author").append(data.author);
@@ -71,7 +71,7 @@ $( document ).ready(function() {
   });
 
 
-});
+
 
 
 
@@ -90,30 +90,37 @@ displayCart();
 
 $(".add-to-cart").click(function() {
 
-  var bookProperties = $(this).siblings();
-  var bookImage = $(this).siblings().first().attr("src");
-  var bookTitle = bookProperties[1].innerHTML;
-  var bookAuthor = bookProperties[2].innerHTML;
-  var bookRating = bookProperties[3].innerHTML;
-  var bookFormat = $(this).siblings().first().next().attr("title");
-  var bookPrice = bookProperties[4].innerHTML;
-  var bookId = $(this).prev().attr("title");
+  var bookId = $(".book-title").attr("title");
+  var bookImage = $(".book-image").attr("src");
+  var bookTitle = $(".book-title").html();
+  var bookAuthor = $(".book-author").html();
+  var bookFormat = $(".book-price").attr("title");
+  var bookPrice = $(".book-price").html();
+  var test = $(".book-title");
   var bookCount = 1;
 
-  var Book = function(id, title, author, rating, format, price, image, count)
+  var Book = function(id, title, author, format, price, image, count)
   {
     this.id = id;
     this.title = title;
     this.author = author;
-    this.rating = rating;
     this.format = format;
     this.price = price;
     this.image = image;
     this.count = count;
   }
 
-  var book = new Book(bookId, bookTitle, bookAuthor, bookRating, bookFormat, bookPrice, bookImage, bookCount);
+  var book = new Book(bookId, bookTitle, bookAuthor, bookFormat, bookPrice, bookImage, bookCount);
+  console.log(test);
+  console.log(bookId);
+  console.log(bookImage);
+  console.log(bookTitle);
+  console.log(bookAuthor);
+  console.log(bookFormat);
+  console.log(bookPrice);
+  console.log(bookCount);
 
+  console.log(book);
   addToCart(book);
   CartIconNumber();
   console.log(cart);
@@ -127,6 +134,25 @@ $("#show-cart").on('click', ".delete-item", function() {
   displayCart();
 });
 
+$("#show-cart").on('click', ".plus-item", function() {
+  var plusId = $(this).attr("data-id");
+  plusCartItem(plusId);
+  CartIconNumber();
+  displayCart();
+})
+
+$("#show-cart").on('click', ".subtract-item", function() {
+  var subtractId = $(this).attr("data-id");
+  removeBookFromCart(subtractId);
+  CartIconNumber();
+  displayCart();
+})
+
+$("#clear-button").click(function(event) {
+  clearCart();
+  displayCart();
+})
+
 function addToCart(book) {
   for(var i in cart) {
     if(cart[i].id === book.id) {
@@ -138,10 +164,19 @@ function addToCart(book) {
   cart.push(book);
   saveCart();
 }
-
-function removeBookFromCart(book) {
+function plusCartItem(id) {
   for(var i in cart) {
-    if(cart[i].id === book.id) {
+    if(cart[i].id === id) {
+      cart[i].count++;
+      saveCart();
+      return;
+    }
+  }
+}
+
+function removeBookFromCart(id) {
+  for(var i in cart) {
+    if(cart[i].id === id) {
       cart[i].count--;
       if(cart[i].count == 0) {
         cart.splice(i, 1);
@@ -192,8 +227,7 @@ function listCart() {
     for(var p in item) {
       itemCopy[p] = item[p];
     }
- //   itemCopy.total = item.price;
- //   itemCopy.total = (item.price * item.count).toFixed(2);
+    itemCopy.total = (item.price * item.count).toFixed(2);
     cartCopy.push(itemCopy);
   }
   return cartCopy;
@@ -219,6 +253,8 @@ function displayCart() {
 
   if(countCart() === 0) {
     $("#cart-header").html("Shopping cart is empty!");
+    $("#clear-button").toggle();
+    $("#checkout").toggle();
   }
   else {
     $("#cart-header").html("Shopping cart:");
@@ -230,11 +266,14 @@ function displayCart() {
     output += "<div>" + "<img src='" + cartArray[i].image + "' alt='book-cover'>" + 
               "<p>" + cartArray[i].title + "</p>" + 
               "<p>" + cartArray[i].author + "</p>" +
-              "<p>" + cartArray[i].rating + "</p>" +
               "<p>" + cartArray[i].format + "</p>" +
               "<p>" + cartArray[i].price + "</p>" +
               "<p>" + cartArray[i].count + "</p>" + 
               "<div>" + 
+              "<button type='button' class='plus-item btn btn-success' data-id='" + cartArray[i].id + 
+              "'>+</button>" +
+              "<button type='button' class='subtract-item btn btn-danger' data-id='" + cartArray[i].id + 
+              "'>-</button>" +
               "<button type='button' class='delete-item btn btn-danger' data-id='" + cartArray[i].id + 
               "'>Remove</button>" + "</div>" + "</div>";
   }
@@ -244,6 +283,7 @@ function displayCart() {
 //glyphicon shopping cart icon
 
 function CartIconNumber () {
-  console.log('clicked');
   $("#number-of-cartitems").html(countCart());
 };
+
+});

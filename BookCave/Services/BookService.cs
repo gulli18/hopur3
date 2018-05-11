@@ -59,6 +59,12 @@ namespace BookCave.Services
             var booksByGenre = _bookRepo.GetBooksByGenre(genre);
             return booksByGenre;
         }
+
+        public List<BookListViewModel> GetAudioBooksByGenre(string genre)
+        {
+            var booksByGenre = _bookRepo.GetAudioBooksByGenre(genre);
+            return booksByGenre;
+        }
         public BookDetailedViewModel GetWinner()
         {
             var chosenBook = _bookRepo.GetWinner();

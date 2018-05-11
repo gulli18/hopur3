@@ -55,7 +55,14 @@ namespace BookCave.Controllers
         public IActionResult Genre(string genre)
         {
             var booksByGenre = _bookService.GetBooksByGenre(genre);
+            ViewBag.genreTitle = genre.ToUpper();
             return View(booksByGenre);
+        }
+
+        public IActionResult GenreAudio(string genre)
+        {
+            var audioBooksByGenre = _bookService.GetAudioBooksByGenre(genre);
+            return View(audioBooksByGenre);
         }
         public IActionResult ChooseForMe()
         {

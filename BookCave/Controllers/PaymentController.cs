@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BookCave.Models;
 using BookCave.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using BookCave.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookCave.Controllers
 {
