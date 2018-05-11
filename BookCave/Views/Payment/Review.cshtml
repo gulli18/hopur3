@@ -1,6 +1,6 @@
-@model List<BookCave.Models.ViewModels.BookListViewModel>
-<P>Your order</P>
-<div id="show-cart"></div>
+@model BookCave.Models.InputModels.InputPaymentModel
+<h3>Your order</h3>
+<div id="review-cart"></div>
 <div> <a asp-controller="Payment" asp-action="Pay" class="btn btn-primary btn-lg">Back to payment</a>
       <a asp-controller="Payment" asp-action="Confirm" class="btn btn-primary btn-lg">Go to confirmation</a>
 </div>

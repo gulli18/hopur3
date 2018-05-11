@@ -60,12 +60,12 @@ namespace BookCave.Controllers
           user.BillingTownCity = model.BillingTownCity;
           user.BillingZipPostcode = model.BillingZipPostcode;
           user.BillingCountry = model.BillingCountry;
+          await _userManager.UpdateAsync(user);
           if (!ModelState.IsValid)
           {
             ViewData["ErrorMessage"]= "error";
             return View(model);
           }
-          await _userManager.UpdateAsync(user);
           _contactService.ProcessContact(model);
           return View(model);
         }
