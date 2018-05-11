@@ -40,6 +40,7 @@ namespace BookCave.Repositories
             var searchResults = (from b in _db.Books
                                 join a in _db.Authors on b.AuthorsId equals a.Id 
                                 where b.Title.ToLower().Contains(searchTerm.ToLower()) || a.Name.ToLower().Contains(searchTerm.ToLower())
+                                orderby b.Title ascending
                                 select new BookListViewModel
                                 {
                                     Id = b.Id,
