@@ -21,6 +21,7 @@ $( document ).ready(function() {
         }
         $("#popup-container h4 a").text("Audiobooks");
         $("#popup-container #book-top a").attr("href","http://localhost:5000/Book/Top10RatedAudio");
+        $("#popup-container #book-best a").attr("href","http://localhost:5000/Book/BestSellersAudio");
         $("#subject-list #advent").attr("href","http://localhost:5000/book/genreaudio?genre=Adventure");
         $("#subject-list #bio").attr("href","http://localhost:5000/book/genreaudio?genre=Biography");
         $("#subject-list #com").attr("href","http://localhost:5000/book/genreaudio?genre=Comedy");
@@ -38,16 +39,10 @@ $( document ).ready(function() {
     });
   });
 
- $(function() {
-      $.currency.configure({
-          baseCurreny: "USD",
-          rates: {
-              "GBP": 0.7454
-          }
-      });
-      $(".convert").click(function() {
-          $(".currencies").currency("GBP");
-      });
+  $("#eu-btn").click(function() {
+    var dollar = $(".currency").html();
+    var euro = dollar * 0.84;
+    $(".currency").text("€" + euro);
   });
 
   $('[lang="is"]').hide();

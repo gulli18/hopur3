@@ -279,9 +279,61 @@
     color: #070707;
 }
 
+#bestsellers-book-heading {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    border: solid;
+    border-top-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#bestsellers-book-container {
+    margin-top: 70px;
+    padding-bottom: 60px;
+    text-align: center;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#bestsellers-book-container h3 a {
+    color: #070707;
+}
+
+#bestsellers-audio-heading {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    border: solid;
+    border-top-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#bestsellers-audio-container {
+    margin-top: 70px;
+    padding-bottom: 60px;
+    text-align: center;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#bestsellers-audio-container h3 a {
+    color: #070707;
+}
+
 /* My account view */
 #myAccount-view {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 #myAccount-view-left {
@@ -315,13 +367,17 @@
     margin-left: 15px;
 }
 
+#myAccount-details img {
+    border: solid;
+}
+
 #billing-address h3 {
     border: solid;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom-width: thin;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 50px;
     padding-bottom: 10px;
 }
@@ -332,7 +388,7 @@
     border-left: none;
     border-right: none;
     border-bottom-width: thin;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 50px;
     padding-bottom: 10px;
 }
@@ -343,7 +399,7 @@
     border-left: none;
     border-right: none;
     border-bottom-width: thin;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 50px;
     padding-bottom: 10px;
 }
@@ -354,7 +410,7 @@
     border-left: none;
     border-right: none;
     border-bottom-width: thin;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 50px;
     padding-bottom: 10px;
 }
@@ -413,7 +469,7 @@ footer a:hover {
 }
 
 #login-font {
-    margin-left: 20px;
+    margin-left: 45px;
 }
 
 /* Log In */

@@ -4,8 +4,9 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <div id="top10-heading">
+            <div id="bestsellers-book-heading">
                 <h2>Best Sellers</h2>
+                <h4>Books</h4>
             </div>
         </div>
         <div class="col-lg-2"></div>
@@ -15,7 +16,7 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                <div id="top10-book-container">
+                <div id="bestsellers-book-container">
                     <h3><a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a></h3>
                     <h5>by <a href="#">
                         @book.Author</a>

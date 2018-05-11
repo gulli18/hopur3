@@ -7,7 +7,6 @@
         </div>
         <div class="col-lg-2">
             <h3>Books</h3>
-            <!--<h6><a href="#">See All</a></h6>-->
         </div>
         <div class="col-lg-5">
             <br><hr>
@@ -19,19 +18,11 @@
             {
                 <div class="col-lg-3">
                     <div id="book-frontpage">
-                    <!--
-                        <ul>
-                            <li><a href="#"><img src="@book.Image" alt="book-cover" width="100" height="140"></a></li>
-                            <li><p><a href="#">@book.Title</a></p></li>
-                            <li><p>by <a href="#">Author</a></p></li>
-                            <li><p>@book.Rating</p></li>
-                        </ul> -->
-                        
                         <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id"><img src="@book.Image" alt="book-cover" width="130" height="180"></a>
                         <div id="book-details-frontpage">
                             <p><a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a></p>
                             <p>by <a asp-controller="Author" asp-action="Details" asp-route-id="@book.AuthorsId">@book.Author</a></p>
-                            <p>$@book.Price</p>
+                            <p><span class="currency">$@book.Price</span></p>
                         </div>
                     </div>
                 </div>
