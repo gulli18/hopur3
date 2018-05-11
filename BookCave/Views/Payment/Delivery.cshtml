@@ -1,4 +1,4 @@
-@model BookCave.Models.ViewModels.PaymentViewModel
+@model BookCave.Models.InputModels.InputPaymentModel
 
 <div class="container">
   <div class="row" id="billing-address">
@@ -76,47 +76,70 @@
         <div class="form-group">
           <h4>Shipping Information:</h4>
           <label for="street">Street Address:</label>
-          <input type="text" class="form-control" id="street" asp-for="ShippingStreetAdress" 
+          <input type="text" class="form-control" id="shippingstreet" asp-for="ShippingStreetAdress" 
           placeholder="Street Address" value="@Model.ShippingStreetAdress">
+          <span asp-validation-for="ShippingStreetAdress" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+          <label for="city">Property Name:</label>
+          <input type="text" class="form-control" id="shippingproperty" asp-for="ShippingPropertyName"
+          placeholder="City" value="@Model.ShippingPropertyName">
+          <span asp-validation-for="ShippingPropertyName" class="text-danger"></span>
         </div>
         <div class="form-group">
           <label for="city">City:</label>
-          <input type="text" class="form-control" id="city" asp-for="ShippingTownCity"
+          <input type="text" class="form-control" id="shippingcity" asp-for="ShippingTownCity"
           placeholder="City" value="@Model.ShippingTownCity">
+          <span asp-validation-for="ShippingTownCity" class="text-danger"></span>
         </div>
         <div class="form-group">
           <label for="zip">Zip Code:</label>
-          <input type="text" class="form-control" id="zip" asp-for="ShippingPostcode"
+          <input type="text" class="form-control" id="shippingzip" asp-for="ShippingPostcode"
           placeholder="Zip Code" value="@Model.ShippingPostcode">
+          <span asp-validation-for="ShippingPostcode" class="text-danger"></span>
         </div>
         <div class="form-group">
           <label for="country">Country:</label>
-          <input type="text" class="form-control" id="country" asp-for="ShippingCountry"
+          <input type="text" class="form-control" id="shippingcountry" asp-for="ShippingCountry"
           placeholder="Country" value="@Model.ShippingCountry">
+          <span asp-validation-for="ShippingCountry" class="text-danger"></span>
         </div>
         <h4>Billing Information:</h4>
           <div class="form-group">
           <label for="street">Street Address:</label>
-          <input type="text" class="form-control" id="street" asp-for="BillingStreetAdress" 
+          <input type="text" class="form-control" id="billingstreet" asp-for="BillingStreetAdress" 
           placeholder="Street Address" value="@Model.BillingStreetAdress">
+          <span asp-validation-for="BillingStreetAdress" class="text-danger"></span>
+        </div>
+         <div class="form-group">
+          <label for="city">Property Name:</label>
+          <input type="text" class="form-control" id="billingproperty" asp-for="BillingPropertyName"
+          placeholder="City" value="@Model.BillingPropertyName">
+          <span asp-validation-for="BillingPropertyName" class="text-danger"></span>
         </div>
         <div class="form-group">
           <label for="city">City:</label>
-          <input type="text" class="form-control" id="city" asp-for="BillingTownCity"
+          <input type="text" class="form-control" id="billingcity" asp-for="BillingTownCity"
           placeholder="City" value="@Model.BillingTownCity">
+          <span asp-validation-for="BillingTownCity" class="text-danger"></span>
         </div>
         <div class="form-group">
           <label for="zip">Zip Code:</label>
-          <input type="text" class="form-control" id="zip" asp-for="BillingZipPostcode"
+          <input type="text" class="form-control" id="billingzip" asp-for="BillingZipPostcode"
           placeholder="Zip Code" value="@Model.BillingZipPostcode">
+          <span asp-validation-for="BillingZipPostcode" class="text-danger"></span>
         </div>
         <div class="form-group">
           <label for="country">Country:</label>
-          <input type="text" class="form-control" id="country" asp-for="ShippingCountry"
+          <input type="text" class="form-control" id="billingcountry" asp-for="BillingCountry"
           placeholder="Country" value="@Model.BillingCountry">
+          <span asp-validation-for="BillingCountry" class="text-danger"></span>
         </div>
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-primary btn-lg">
+        </div>
+              <div> <a asp-controller="Cart" asp-action="Index" class="btn btn-primary btn-lg">Back to cart</a>
+              <a asp-controller="Payment" asp-action="Pay" class="btn btn-primary btn-lg">Go to payment</a>
         </div>
       </form>
     </div>

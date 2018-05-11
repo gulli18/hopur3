@@ -101,7 +101,7 @@
                     <li id="book-top"><a href="http://localhost:5000/Book/Top10Rated"><span lang="en">BookCave Top 10</span> 
                         <span lang="is">BookCave Topp 10</span></a>
                     </li>
-                    <li id="book-best"><a href="#">BookCave Bestsellers</a></li>
+                    <li id="book-best"><a asp-controller="Book" asp-action="BestSellers">BookCave Bestsellers</a></li>
                     <li id="book-author"><a asp-controller="Author" asp-action="Index"><span lang="en">Books by Author</span>
                         <span lang="is">Bækur Eftir Höfund</span></a>
                     </li>
@@ -226,7 +226,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

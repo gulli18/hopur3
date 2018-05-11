@@ -7,10 +7,6 @@ namespace BookCave.Models.ViewModels
     public string FavoriteBook { get; set; }
     public string Age { get; set; }
     public string Image { get; set; }
-     public string BillingAdressId { get; set; }
-    public string ShippingAdressId { get; set; }
-    public string CardInformationId { get; set; }
-    public string OrderListId { get; set; }
 
   }
 }

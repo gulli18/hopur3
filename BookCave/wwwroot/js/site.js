@@ -70,11 +70,12 @@ $( document ).ready(function() {
       $("#winner-format").text('');
 
       $("#winner-image").attr("src", data.image);
+      $("#winner-image").attr("title", data.price);
       $("#winner-title").append(data.title);
+      $("#winner-title").attr("title", data.id);
       $("#winner-author").append(data.author);
+      $("#winner-author").attr("title", data.format);
       $("#winner-rating").append(data.rating);
-      $("#winner-price").append(data.price);
-      $("#winner-format").append(data.format);
     });
   };
 
@@ -101,6 +102,17 @@ loadCart();
 CartIconNumber();
 displayCart();
 
+var Book = function(id, title, author, format, price, image, count)
+{
+  this.id = id;
+  this.title = title;
+  this.author = author;
+  this.format = format;
+  this.price = price;
+  this.image = image;
+  this.count = count;
+}
+
 $(".add-to-cart").click(function() {
 
   var bookId = $(".book-title").attr("title");
@@ -112,35 +124,27 @@ $(".add-to-cart").click(function() {
   var test = $(".book-title");
   var bookCount = 1;
 
-  var Book = function(id, title, author, format, price, image, count)
-{
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.format = format;
-  this.price = price;
-  this.image = image;
-  this.count = count;
-}
-
   var book = new Book(bookId, bookTitle, bookAuthor, bookFormat, bookPrice, bookImage, bookCount);
-  console.log(test);
-  console.log(bookId);
-  console.log(bookImage);
-  console.log(bookTitle);
-  console.log(bookAuthor);
-  console.log(bookFormat);
-  console.log(bookPrice);
-  console.log(bookCount);
-
-  console.log(book);
   addToCart(book);
   CartIconNumber();
-  console.log(cart);
+});
+
+$(".add-to-cart-cs").click(function() {
+
+  var bId = $("#winner-title").attr("title");
+  var bImage = $("#winner-image").attr("src");
+  var bTitle = $("#winner-title").html();
+  var bAuthor = $("#winner-author").html();
+  var bFormat = $("#winner-author").attr("title");
+  var bPrice = $("#winner-image").attr("title");
+  var bCount = 1;
+
+  var book = new Book(bId, bTitle, bAuthor, bFormat, bPrice, bImage, bCount);
+  addToCart(book);
+  CartIconNumber();
 });
 
 $("#show-cart").on('click', ".delete-item", function() {
-  console.log('clicked');
   var removeId = $(this).attr("data-id");
   removeBookFromCartAll(removeId);
   CartIconNumber();

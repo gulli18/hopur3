@@ -95,11 +95,7 @@ namespace BookCave.Controllers
             LastName = user.LastName,
             FavoriteBook = user.FavoriteBook,
             Age = user.Age,
-            Image = user.Image,
-            BillingAdressId = user.BillingAdressId,
-            ShippingAdressId = user.ShippingAdressId,
-            CardInformationId = user.CardInformationId,
-            OrderListId = user.OrderListId
+            Image = user.Image
 
           });
         }
