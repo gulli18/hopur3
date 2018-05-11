@@ -54,6 +54,18 @@ namespace BookCave.Services
             return top10RatedAudio;
         }
 
+        public List<BookListViewModel> GetBestSellers()
+        {
+            var top10Sold = _bookRepo.GetBestSellers();
+            return top10Sold;
+        }
+
+        public List<BookListViewModel> GetBestSellersAudio()
+        {
+            var top10SoldAudio = _bookRepo.GetBestSellersAudio();
+            return top10SoldAudio;
+        }
+
         public List<BookListViewModel> GetBooksByGenre(string genre)
         {
             var booksByGenre = _bookRepo.GetBooksByGenre(genre);
