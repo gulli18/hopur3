@@ -43,11 +43,10 @@
         }
       </div>
       <div class="col-lg-3">
-        <!--
-        <li>1937</li>
-        <li>1940</li>
-        <li>1941</li>
-        -->
+        @foreach (var book in @Model.Book)
+        {
+          <li>@book.PublicationYear</li>
+        }
       </div>
     </div>
     </div>

@@ -14,6 +14,8 @@ namespace BookCave.Models.ViewModels
         public string Format { get; set; }
        
         public string Image { get; set; }
+
+        public int PublicationYear { get; set; }
     }
 
 

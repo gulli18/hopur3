@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div id="nav-login" class="col-lg-2">
                             @await Html.PartialAsync("_LoginPartial")
                             <!-- <a href="#"><span lang="en">Sign In</span> <span lang="is">Innskrá</span></a> -->
                         </div>
@@ -68,7 +68,7 @@
                             <a href="#" id="bottom-nav-audio"><span lang="en">Audiobooks</span> <span lang="is">Hljóðbækur</span> <span class="caret"></span></a>
                         </div>
                         <div class="col-lg-7">
-                            <a asp-controller="Book" asp-action="chooseforme" id="chooseforme"><span lang="en">Choose For Me</span> <span lang="is">Velja fyrir mig</span></a>
+                            <a asp-controller="Book" asp-action="chooseforme"><span lang="en">Choose For Me</span> <span lang="is">Velja fyrir mig</span></a>
                         </div>
                         <div class="col-lg-1">
                             <button type="button" id="euro-btn" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
@@ -98,7 +98,7 @@
             <div class="col-lg-4">
                 <ul>
                     <li><strong><span lang="en">Customer Favorites</span> <span lang="is">Eftirlæti Viðskiptavinarins</span></strong></li>
-                    <li id="book-top"><a asp-controller="Book" asp-action="Top10Rated"><span lang="en">BookCave Top 10</span> 
+                    <li id="book-top"><a href="http://localhost:5000/Book/Top10Rated"><span lang="en">BookCave Top 10</span> 
                         <span lang="is">BookCave Topp 10</span></a>
                     </li>
                     <li id="book-best"><a href="#">BookCave Bestsellers</a></li>
@@ -108,16 +108,16 @@
                 </ul>
             </div>
             <div class="col-lg-3">
-                <ul>
+                <ul id="subject-list">
                     <li><strong><span lang="en">Subjects</span> <span lang="is">Tegundir Bóka</span></strong></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Adventure"><span lang="en">Adventure</span> <span lang="is">Ævintýrabækur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Biography"><span lang="en">Biography</span> <span lang="is">Ævisögur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Comedy"><span lang="en">Comedy</span> <span lang="is">Gamanbækur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Horror"><span lang="en">Horror</span> <span lang="is">Hrollvekjubækur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Romance"><span lang="en">Romance</span> <span lang="is">Ástarsögur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Sci-fi"><span lang="en">Sci-Fi</span> <span lang="is">Vísindaskáldskapur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Sport"><span lang="en">Sport</span> <span lang="is">Íþróttabækur</span></a></li>
-                    <li><a href="http://localhost:5000/book/genre?genre=Thriller"><span lang="en">Thriller</span> <span lang="is">Spennusögur</span></a></li>
+                    <li><a id="advent" href="http://localhost:5000/book/genre?genre=Adventure"><span lang="en">Adventure</span> <span lang="is">Ævintýrabækur</span></a></li>
+                    <li><a id="bio" href="http://localhost:5000/book/genre?genre=Biography"><span lang="en">Biography</span> <span lang="is">Ævisögur</span></a></li>
+                    <li><a id="com" href="http://localhost:5000/book/genre?genre=Comedy"><span lang="en">Comedy</span> <span lang="is">Gamanbækur</span></a></li>
+                    <li><a id="horr" href="http://localhost:5000/book/genre?genre=Horror"><span lang="en">Horror</span> <span lang="is">Hrollvekjubækur</span></a></li>
+                    <li><a id="rom" href="http://localhost:5000/book/genre?genre=Romance"><span lang="en">Romance</span> <span lang="is">Ástarsögur</span></a></li>
+                    <li><a id="sci" href="http://localhost:5000/book/genre?genre=Sci-fi"><span lang="en">Sci-Fi</span> <span lang="is">Vísindaskáldskapur</span></a></li>
+                    <li><a id="sport" href="http://localhost:5000/book/genre?genre=Sport"><span lang="en">Sport</span> <span lang="is">Íþróttabækur</span></a></li>
+                    <li><a id="thril" href="http://localhost:5000/book/genre?genre=Thriller"><span lang="en">Thriller</span> <span lang="is">Spennusögur</span></a></li>
                 </ul>
             </div>
         </div>
