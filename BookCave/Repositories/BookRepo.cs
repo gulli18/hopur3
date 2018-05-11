@@ -28,7 +28,8 @@ namespace BookCave.Repositories
                             AuthorsId =a.Id,
                             Format = b.Format,
                             Price = b.Price,
-                            Rating = b.Rating
+                            Rating = b.Rating,
+                            Image = b.Image
                         }).ToList();
                         
             return books;
