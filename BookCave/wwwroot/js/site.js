@@ -29,7 +29,7 @@ $( document ).ready(function() {
     });
   });
 
-  $(function() {
+ $(function() {
       $.currency.configure({
           baseCurreny: "USD",
           rates: {
@@ -84,6 +84,7 @@ $( document ).ready(function() {
 
 // Shopping cart functions
 var cart = [];
+
 loadCart();
 CartIconNumber();
 displayCart();
@@ -100,15 +101,15 @@ $(".add-to-cart").click(function() {
   var bookCount = 1;
 
   var Book = function(id, title, author, format, price, image, count)
-  {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.format = format;
-    this.price = price;
-    this.image = image;
-    this.count = count;
-  }
+{
+  this.id = id;
+  this.title = title;
+  this.author = author;
+  this.format = format;
+  this.price = price;
+  this.image = image;
+  this.count = count;
+}
 
   var book = new Book(bookId, bookTitle, bookAuthor, bookFormat, bookPrice, bookImage, bookCount);
   console.log(test);
@@ -239,6 +240,9 @@ function saveCart() {
 
 function loadCart() {
   cart = JSON.parse(localStorage.getItem('ShoppingCart'));
+  if(cart == null) {
+    cart = [];
+  }
 }
 
 //code for Cart/Index
