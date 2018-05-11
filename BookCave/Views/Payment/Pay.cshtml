@@ -1,8 +1,82 @@
-<form action="POST">
-   <label for="Name">Cardholder Name: </label>
-  <input type="text" id="Name">
-  <br>
-  <label for="Address">Cardnumber: </label>
-  <input type="text" id="Address">
-  <br>
-</form>
+@model BookCave.Models.ViewModels.CardViewModel
+
+<div class="container">
+  <div class="row" id="card-information">
+    <div class="col-lg-3">
+      <h3>Card Information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <form asp-controller="Account" asp-action="MyCardInformation" method="POST">
+        <div class="form-group">
+          <label for="cardholdername">Cardholder Name:</label>
+          <input type="text" class="form-control" id="cardholdername" asp-for="CardHolderName" 
+          placeholder="Cardholder Name" value="@Model.CardHolderName">
+        </div>
+        <div class="form-group">
+          <label for="cardnumber">Card Number:</label>
+          <input type="text" class="form-control" id="cardnumber" asp-for="CardNumber"
+          placeholder="Card Number" value="@Model.CardNumber">
+        </div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="">Month:</label> <br>
+                <select name="month" id="month-dropdown">
+                  <option value="january">January</option>
+                  <option value="february">February</option>
+                  <option value="march">March</option>
+                  <option value="april">April</option>
+                  <option value="may">May</option>
+                  <option value="june">June</option>
+                  <option value="july">July</option>
+                  <option value="august">August</option>
+                  <option value="september">September</option>
+                  <option value="october">October</option>
+                  <option value="november">November</option>
+                  <option value="december">December</option>
+                </select>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="form-group">
+              <label for="">Year:</label> <br>
+                <select name="year" id="year-dropdown">
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                </select>
+            </div>
+              <div class="form-group">
+              <label for="SecurityNumber">Security Number:</label>
+              <input type="number" class="form-control" id="securitynumber" asp-for="SecurityNumber"
+                     value="@Model.SecurityNumber">
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Update" class="btn btn-primary btn-lg">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
