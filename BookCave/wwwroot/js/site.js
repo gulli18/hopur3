@@ -267,28 +267,28 @@ function displayCart() {
   var cartArray = listCart();
 
   if(countCart() === 0) {
-    $("#cart-header").html("Shopping cart is empty!");
+    $("#cart-header").html("Shopping Cart Is Empty!");
     $("#clear-button").toggle();
     $("#checkout").toggle();
   }
   else {
-    $("#cart-header").html("Shopping cart:");
+    $("#cart-header").html("Shopping Cart");
   }
 
   var output = "";
   
   for(var i in cartArray) {
     output += "<div>" + "<img src='" + cartArray[i].image + "' alt='book-cover'>" + 
-              "<p>" + cartArray[i].title + "</p>" + 
-              "<p>" + cartArray[i].author + "</p>" +
-              "<p>" + cartArray[i].format + "</p>" +
-              "<p>" + cartArray[i].price + "</p>" +
-              "<p>" + cartArray[i].count + "</p>" + 
+              "<h4>" + cartArray[i].title + "</h4>" + 
+              "<h4>" + "by " + cartArray[i].author + "</h4>" +
+              "<h4>" + cartArray[i].format + "</h4>" +
+              "<h4>" + "$" + cartArray[i].price + "</h4>" +
+              "<h4>" + "Quantity: " + cartArray[i].count + "</h4>" + 
               "<div>" + 
               "<button type='button' class='plus-item btn btn-success' data-id='" + cartArray[i].id + 
               "'>+</button>" +
               "<button type='button' class='subtract-item btn btn-danger' data-id='" + cartArray[i].id + 
-              "'>-</button>" +
+              "'>-</button>" + "<br>" +
               "<button type='button' class='delete-item btn btn-danger' data-id='" + cartArray[i].id + 
               "'>Remove</button>" + "</div>" + "</div>";
   }

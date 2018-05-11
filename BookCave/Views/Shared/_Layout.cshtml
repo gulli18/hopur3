@@ -30,6 +30,7 @@
                         <div class="col-lg-9">
                             <div class="input-group">
                                 <div class="input-group-btn">
+                                    <form method="GET">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                     All <span class="caret"></span>
                                     </button>
@@ -39,12 +40,22 @@
                                         <li><a href="#"><span lang="en">Audiobooks</span> <span lang="is">Hljóðbækur</span></a></li>
                                     </ul>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Search">
+                                <!-- <input type="text" class="form-control" placeholder="Search"> -->
+                                <!-- <form method="GET"> -->
+                                    <input type="text" id="searchTerm" name="searchTerm" class="form-control" placeholder="Search for book by title or author">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit"  asp-controller="Book" asp-action="Index">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                                <!--
                                 <div class="input-group-btn">
                                     <button class="btn btn-primary" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>
                                     </button>
                                 </div>
+                                -->
                             </div>
                         </div>
                         <div id="nav-login" class="col-lg-2">

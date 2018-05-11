@@ -1,25 +1,37 @@
 @model List<BookCave.Models.ViewModels.AuthorListViewModel>
 
-
-  <div id="authors-table">
-    <input class="form-control" id="authorsInput" type="text" placeholder="Search Author">
-    <br>
-    <table class="table table-boarded table-striped">
-      <thead>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Nationality</th>
-      </thead>
-      <tbody id="authorsTable">
-        @foreach (var authors in @Model)
-        {
-          <tr>
-            <td><img src="@authors.Image" alt="profile" width="20" height="20" class="img-rounded"></td>
-            <td><a asp-controller="Author" asp-action="Details" asp-route-id="@authors.Id">@authors.Name</a></td>
-            <td>@authors.Nationality</td>
-          </tr>
-        }
+<div class="container" id="authors-container">
+  <div class="row">
+  <div class="col-lg-5">
+    <hr>
+  </div>
+  <div class="col-lg-2">
+    <h2 id="authors-heading">All Authors</h2>
+  </div>
+  <div class="col-lg-5">
+    <hr>
+  </div>
+</div>
+<div id="authors-table">
+  <input class="form-control" id="authorsInput" type="text" placeholder="Search Author">
+  <br>
+  <table class="table table-boarded table-striped">
+    <thead>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Nationality</th>
+    </thead>
+    <tbody id="authorsTable">
+      @foreach (var authors in @Model)
+      {
+        <tr>
+          <td><img src="@authors.Image" alt="profile" width="30" height="30" class="img-circle"></td>
+          <td><a asp-controller="Author" asp-action="Details" asp-route-id="@authors.Id">@authors.Name</a></td>
+          <td>@authors.Nationality</td>
+        </tr>
+      }
       </tbody>
     </table>
   </div>
+</div>
 </div>
