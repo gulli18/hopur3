@@ -96,6 +96,7 @@ var cart = [];
 loadCart();
 CartIconNumber();
 displayCart();
+displayReviewOrder();
 
 var Book = function(id, title, author, format, price, image, count)
 {
@@ -300,5 +301,26 @@ function displayCart() {
 function CartIconNumber () {
   $("#number-of-cartitems").html(countCart());
 };
+
+function displayReviewOrder() {
+  var cartArray = listCart();
+
+  var output = "";
+  
+  for(var i in cartArray) {
+    output += "<div>" + "<img src='" + cartArray[i].image + "' alt='book-cover'>" + 
+              "<p>" + cartArray[i].title + "</p>" + 
+              "<p>" + cartArray[i].author + "</p>" +
+              "<p>" + cartArray[i].format + "</p>" +
+              "<p>" + cartArray[i].price + "</p>" +
+              "<p>" + cartArray[i].count + "</p>" + "</div>";
+  }
+  $("#review-cart").html(output);
+}
+
+/*$("#display-order").click(function() {
+  console.log('i have clicked display order button');
+  displayReviewOrder();
+})*/
 
 });
