@@ -48,7 +48,29 @@ $( document ).ready(function() {
   })
 
   var buttonclick = 0;
-  //document.getElementById("winner-image").style.visibility = "hidden";
+  // Document.getElementById("winner-image").style.visibility = "hidden";
+  $("#chooseforme").click(function() {
+    $.get("GetWinner", function(data, status){
+      buttonclick++;
+      if(buttonclick > 0) 
+      {
+        $("#winner-title").text('');
+        $("#winner-author").text('');
+        $("#winner-rating").text('');
+        $("#winner-price").text('');
+        $("#winner-format").text('');
+      }
+  // Document.getElementById("winner-image").style.visibility = "visible";
+      $("#winner-image").attr("src", data.image);
+      $("#winner-title").append(data.title);
+      $("#winner-author").append(data.author);
+      $("#winner-rating").append(data.rating);
+      $("#winner-price").append(data.price);
+      $("#winner-format").append(data.format);
+    });
+  });
+
+  // Document.getElementById("winner-image").style.visibility = "hidden";
   $("#winner-button").click(function() {
     $.get("GetWinner", function(data, status){
       buttonclick++;
@@ -60,7 +82,7 @@ $( document ).ready(function() {
         $("#winner-price").text('');
         $("#winner-format").text('');
       }
-  //    document.getElementById("winner-image").style.visibility = "visible";
+  // Document.getElementById("winner-image").style.visibility = "visible";
       $("#winner-image").attr("src", data.image);
       $("#winner-title").append(data.title);
       $("#winner-author").append(data.author);

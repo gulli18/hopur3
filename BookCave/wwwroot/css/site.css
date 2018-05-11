@@ -437,6 +437,37 @@ footer a:hover {
     width: 100%;
 }
 
+/* Choose For Me */
+#chooseforme-heading {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+    border: solid;
+    border-top-width: thin;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#chooseforme-book-container {
+    margin-top: 70px;
+    padding-bottom: 60px;
+    text-align: center;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: thin;
+}
+
+#chooseforme-book-container h3 a {
+    color: #070707;
+}
+
+#chooseforme-book-container button {
+    margin-top: 20px;
+}
+
 /* 5star */
 .rate {
     border: 1px solid #cccccc;
