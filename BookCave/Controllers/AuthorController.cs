@@ -35,5 +35,12 @@ namespace BookCave.Controllers
             var oneAuthor = _authorService.GetAuthor(id);             
             return View(oneAuthor);
         }
+
+        public IActionResult PopularAuthors()
+        {
+            var authors = _authorService.GetPopularAuthors();
+            return View(authors);
+        }
+        
     }
 }

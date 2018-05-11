@@ -32,7 +32,8 @@ namespace BookCave.Repositories
                            Id = a.Id,
                            Name = a.Name,
                            Nationality = a.Nationality,
-                           Book = booklist
+                           Book = booklist,
+                           Image = a.Image
                          }).ToList();
 
           return authors;
@@ -61,6 +62,22 @@ namespace BookCave.Repositories
                           Book = booklist
                         }).SingleOrDefault();             
       return oneAuthor;
+    }
+
+    public List<AuthorListViewModel> GetPopularAuthors()
+    {
+      var authors = (from a in _db.Authors
+                     orderby a.Popularity
+                     where a.Popularity <= 4
+                     select new AuthorListViewModel
+                     {
+                       Id = a.Id,
+                       Name = a.Name,
+                       Nationality = a.Nationality,
+                       Popularity = a.Popularity,
+                       Image = a.Image
+                     }).ToList();
+      return authors;
     }
 
   }

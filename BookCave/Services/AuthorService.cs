@@ -23,5 +23,11 @@ namespace BookCave.Services
       var oneAuthor = _authorRepo.GetAuthor(id);
       return oneAuthor;
     }
+
+    public List<AuthorListViewModel> GetPopularAuthors()
+    {
+      var authors = _authorRepo.GetPopularAuthors();
+      return authors;
+    }
   }
 }

@@ -7,5 +7,6 @@ namespace BookCave.Data.EntityModels
     public string Nationality { get; set; }
 
     public string Image { get; set; }
+    public int Popularity { get; set; }
   }
 }
