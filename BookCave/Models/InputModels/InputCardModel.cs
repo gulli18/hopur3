@@ -7,7 +7,6 @@ namespace BookCave.Models.InputModels
        [Required(ErrorMessage = "Cardholder name is required!")]
         public string CardHolderName { get; set; }
         [Required(ErrorMessage = "Cardnumber is required!")]
-        [Range(12, 16)]
         public int CardNumber { get; set; }
         [Required(ErrorMessage = "Month is required!")]
         public int Month { get; set; }

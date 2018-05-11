@@ -11,9 +11,10 @@ using System;
 namespace BookCave.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20180511173120_authorupdated")]
+    partial class authorupdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +32,7 @@ namespace BookCave.Migrations
 
                     b.Property<string>("Nationality");
 
-                    b.Property<int>("Popularity");
+                    b.Property<int>("popularity");
 
                     b.HasKey("Id");
 
