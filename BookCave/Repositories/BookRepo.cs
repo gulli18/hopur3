@@ -20,6 +20,7 @@ namespace BookCave.Repositories
             var books = (from b in _db.Books
                          join a in _db.Authors
                          on b.AuthorsId equals a.Id
+                         orderby b.Title ascending
                          select new BookListViewModel
                         {
                             Id = b.Id,
@@ -203,6 +204,7 @@ namespace BookCave.Repositories
             var booksByGenre = (from b in _db.Books
                                 join a in _db.Authors on b.AuthorsId equals a.Id
                                 where b.Genre.ToLower() == genre.ToLower() && b.Format != "Audiobook"
+                                orderby b.Title ascending
                                 select new BookListViewModel
                                 {
                                     Id = b.Id,
@@ -222,6 +224,7 @@ namespace BookCave.Repositories
             var audioBooksByGenre = (from b in _db.Books
                                 join a in _db.Authors on b.AuthorsId equals a.Id
                                 where b.Genre.ToLower() == genre.ToLower() && b.Format == "Audiobook"
+                                orderby b.Title ascending
                                 select new BookListViewModel
                                 {
                                     Id = b.Id,
