@@ -42,12 +42,6 @@
           <li><a asp-controller="Book"asp-action="Details" asp-route-id="@book.Id">@book.Title</a></li>
         }
       </div>
-      <div class="col-lg-3">
-        @foreach (var book in @Model.Book)
-        {
-          <li>@book.PublicationYear</li>
-        }
-      </div>
     </div>
     </div>
     </div>

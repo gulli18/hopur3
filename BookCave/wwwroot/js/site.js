@@ -40,20 +40,22 @@ $( document ).ready(function() {
   });
   
   $("#eu-btn").click(function() {
-  /*  var elements = $(".currency");
+    var elements = $(".currency");
     var currencySigns = $(".currency-sign");
     var span;
     var dollar;
     var euro;
-    dollar = elements.innerHTML;
-    euro = (parseFloat(dollar) * 0.84).toFixed(2);
-
-    $(".currency").innerHTML = euro;
-    span = $(".currency").innerHTML;
-    $(".currency-sign").innerHTML = "€" + span;
+    for(var i = 0; i < elements.length; i++) {
+      dollar = elements[i].innerHTML;
+      euro = (parseFloat(dollar) * 0.84).toFixed(2);
+  
+      $(".currency")[i].innerHTML = euro;
+      span = $(".currency")[i].innerHTML;
+      $(".currency-sign")[i].innerHTML = "€" + span;
+    }
 
       console.log('dollar=' + dollar);
-      console.log('euro=' + euro);*/
+      console.log('euro=' + euro);
   });
 
   $('[lang="is"]').hide();
@@ -79,6 +81,7 @@ $( document ).ready(function() {
       $("#winner-image").attr("title", data.price);
       $("#winner-title").append(data.title);
       $("#winner-title").attr("title", data.id);
+      $("#winner-route").attr("asp-route-id", data.id);
       $("#winner-author").append(data.author);
       $("#winner-author").attr("title", data.format);
       $("#winner-rating").append(data.rating);
@@ -296,7 +299,7 @@ function displayCart() {
               "<h4>" + cartArray[i].format + "</h4>" +
               "<h4>" + "$" + cartArray[i].price + "</h4>" +
               "<h4>" + "Quantity: " + cartArray[i].count + 
-              "<button type='button' class='plus-item btn btn-success' data-id='" + cartArray[i].id + 
+              " <button type='button' class='plus-item btn btn-success' data-id='" + cartArray[i].id + 
               "'>+</button>" + "<button type='button' class='subtract-item btn btn-danger' data-id='" + cartArray[i].id + 
               "'>-</button>" + "</h4>" +
               "<button type='button' class='delete-item btn btn-danger' data-id='" + cartArray[i].id + 
