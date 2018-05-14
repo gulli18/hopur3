@@ -43,9 +43,7 @@
                 <!-- <h5>Rating: @Model.Rating</h5> -->
                 <h3 class="currencies">
                     <span class="money">
-                        <abbr class="unit">$</abbr>
-                        <span title="@Model.Format" class="book-price amount">@Model.Price</span>
-                        <abbr class="currency" title="USD"></abbr>
+                        <p class="currency-sign">$<span title="@Model.Format" class="currency book-price amount">@Model.Price</span></p>
                     </span>
                 </h3>
                 <button type="button" class="add-to-cart btn btn-success btn-lg">Add to Cart</button>
