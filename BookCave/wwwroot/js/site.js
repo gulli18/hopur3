@@ -284,14 +284,12 @@ function displayCart() {
               "<h4>" + "by " + cartArray[i].author + "</h4>" +
               "<h4>" + cartArray[i].format + "</h4>" +
               "<h4>" + "$" + cartArray[i].price + "</h4>" +
-              "<h4>" + "Quantity: " + cartArray[i].count + "</h4>" + 
-              "<div>" + 
+              "<h4>" + "Quantity: " + cartArray[i].count + 
               "<button type='button' class='plus-item btn btn-success' data-id='" + cartArray[i].id + 
-              "'>+</button>" +
-              "<button type='button' class='subtract-item btn btn-danger' data-id='" + cartArray[i].id + 
-              "'>-</button>" + "<br>" +
+              "'>+</button>" + "<button type='button' class='subtract-item btn btn-danger' data-id='" + cartArray[i].id + 
+              "'>-</button>" + "</h4>" +
               "<button type='button' class='delete-item btn btn-danger' data-id='" + cartArray[i].id + 
-              "'>Remove</button>" + "</div>" + "</div>";
+              "'>Remove</button>" + "</div>" + "<br />" + "<br />";
   }
   $("#show-cart").html(output);
 }
@@ -308,12 +306,12 @@ function displayReviewOrder() {
   var output = "";
   
   for(var i in cartArray) {
-    output += "<div>" + "<img src='" + cartArray[i].image + "' alt='book-cover'>" + 
-              "<p>" + cartArray[i].title + "</p>" + 
-              "<p>" + cartArray[i].author + "</p>" +
-              "<p>" + cartArray[i].format + "</p>" +
-              "<p>" + cartArray[i].price + "</p>" +
-              "<p>" + cartArray[i].count + "</p>" + "</div>";
+    output += "<div>" + "<img src='" + cartArray[i].image + "' alt='book-cover'>" + "<br />" + "<br />" +
+              "<h4>" + cartArray[i].title + "</h4>" + 
+              "<h4>" + "by " + cartArray[i].author + "</h4>" +
+              "<h4>" + "Format: " + cartArray[i].format + "</h4>" +
+              "<h4>" + "Price: $" + cartArray[i].price + "</h4>" +
+              "<h4>" + "Quantity: " + cartArray[i].count + "</h4>" + "</div>" + "<br /";
   }
   $("#review-cart").html(output);
 }

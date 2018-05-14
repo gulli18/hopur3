@@ -557,6 +557,84 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
+#cart-container .btn-default {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#cont-shop {
+    float: left;
+    width: 200px;
+}
+
+#checkout {
+    float: right;
+    width: 200px;
+}
+
+#buttons {
+    margin-top: 30px;
+}
+
+#back-to-cart {
+    width: 200px;
+}
+
+#back-to-payment {
+    float: right;
+    width: 200px;
+}
+
+#pay-buttons {
+    margin-top: 30px;
+}
+
+#back-to-del {
+    width: 200px;
+}
+
+#go-to-rev {
+    width: 200px;
+}
+
+#review-heading {
+    text-align: center;
+    border: solid;
+    border-left: none;
+    border-right: none;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 80px;
+}
+
+#your-order-left-container {
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-right-width: thin;
+    text-align: center;
+}
+
+#your-order-right-container {
+    padding-left: 150px;
+}
+
+#go-to-con {
+    float: right;
+    width: 200px;
+}
+
+#back-to-pay {
+    width: 200px;
+}
+
+#bla {
+    margin-top: 80px;
+}
+
 /* 5star */
 .rate {
     border: 1px solid #cccccc;

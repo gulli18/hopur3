@@ -106,9 +106,21 @@ namespace BookCave.Controllers
           return View(model);
         }
 
-        public IActionResult Review()
+        public async Task<IActionResult> Review(InputPaymentModel model)
         {
-            return View();
+            var user = await _userManager.GetUserAsync(User);
+          return View(new InputPaymentModel {
+            ShippingPropertyName = user.ShippingPropertyName,
+            ShippingStreetAdress = user.ShippingStreetAdress,
+            ShippingTownCity = user.ShippingTownCity,
+            ShippingPostcode = user.ShippingZipPostcode,
+            ShippingCountry = user.ShippingCountry,
+            BillingPropertyName = user.BillingPropertyName,
+            BillingStreetAdress = user.BillingStreetAdress,
+            BillingTownCity = user.BillingTownCity,
+            BillingZipPostcode = user.BillingZipPostcode,
+            BillingCountry = user.BillingCountry
+          });
         }
 
         public IActionResult Confirm()

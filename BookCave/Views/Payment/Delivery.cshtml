@@ -31,7 +31,7 @@
           placeholder="Country" value="@Model.ShippingCountry">
         </div>
         <div class="form-group">
-          <input type="submit" value="Update" class="btn btn-primary btn-lg">
+          <input type="submit" value="Update" class="btn btn-primary">
         </div>
       </div>
       <div class="col-lg-1"></div>
@@ -59,9 +59,10 @@
         </div>
       </div>
     </form>
-    <div> <a asp-controller="Cart" asp-action="Index" class="btn btn-primary btn-lg">Back to cart</a>
-          <a asp-controller="Payment" asp-action="Pay" class="btn btn-primary btn-lg">Go to payment</a>
-    </div>
+  </div>
+  <div class="row" id="buttons">
+    <a id="back-to-cart" asp-controller="Cart" asp-action="Index" class="btn btn-primary">Back To Cart</a>
+    <a id="back-to-payment" asp-controller="Payment" asp-action="Pay" class="btn btn-primary">Go To Payment</a>
   </div>
 </div>
 

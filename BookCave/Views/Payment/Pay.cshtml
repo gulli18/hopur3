@@ -68,21 +68,33 @@
                   <option value="2030">2030</option>
                 </select>
             </div>
-              <div class="form-group">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="form-group">
               <label for="SecurityNumber">Security Number:</label>
               <input type="number" class="form-control" id="securitynumber" asp-for="SecurityNumber"
-                     value="@Model.SecurityNumber">
-                     <span asp-validation-for="SecurityNumber" class="text-danger"></span>
-          </div>
+                value="@Model.SecurityNumber">
+              <span asp-validation-for="SecurityNumber" class="text-danger"></span>
+            </div>
           </div>
         </div>
         <div class="form-group">
-          <input type="submit" value="Update" class="btn btn-primary btn-lg">
-        </div>
-        <div> <a asp-controller="Payment" asp-action="Delivery" class="btn btn-primary btn-lg">Back to delivery</a>
-              <a asp-controller="Payment" asp-action="Review" class="btn btn-primary btn-lg">Go to review order</a>
+          <input type="submit" value="Update" class="btn btn-primary">
         </div>
       </form>
+    </div>
+  </div>
+  <div class="row">
+    <div id="pay-buttons"> 
+      <div class="col-lg-3">
+        <a asp-controller="Payment" asp-action="Delivery" class="btn btn-primary" id="back-to-del">Back To Delivery</a>
+      </div>
+      <div class="col-lg-6"></div>
+      <div class="col-lg-3">
+        <a asp-controller="Payment" asp-action="Review" class="btn btn-primary" id="go-to-rev">Go To Review Order</a>
+      </div>
     </div>
   </div>
 </div>

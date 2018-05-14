@@ -1,6 +1,110 @@
 @model BookCave.Models.InputModels.InputPaymentModel
+
+<div class="container">
+      <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                  <h3 id="review-heading">Your Order</h3>
+            </div>
+            <div class="col-lg-4"></div>
+      </div>
+      <div class="row">
+            <div class="col-lg-6" id="your-order-left-container">
+                  <div id="review-cart"></div>
+            </div>
+            <div class="col-lg-6" id="your-order-right-container">
+                  <div class="row">
+                        <h3>Shipping Information</h3> <br>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>Street Address:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.ShippingStreetAdress</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>City:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.ShippingTownCity</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>Zip:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.ShippingPostcode</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>Country:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.ShippingCountry</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                       <br> <h3>Billing Information</h3> <br>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>Street Address:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.BillingStreetAdress</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>City:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.BillingTownCity</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>Zip:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.BillingZipPostcode</p>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-4">
+                              <p><strong>Country:</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                              <p>@Model.BillingCountry</p>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <div class="row" id="bla">
+            <div class="col-lg-3">
+                  <a id="back-to-pay" asp-controller="Payment" asp-action="Pay" class="btn btn-primary">Back To Payment</a>
+            </div>
+            <div class="col-lg-6"></div>
+            <div class="col-lg-3">
+                  <a id="go-to-con" asp-controller="Payment" asp-action="Confirm" class="btn btn-primary">Go To Confirmation</a>
+            </div>
+      </div>
+</div>
+
+<!--
 <h3>Your order</h3>
 <div id="review-cart"></div>
 <div> <a asp-controller="Payment" asp-action="Pay" class="btn btn-primary btn-lg">Back to payment</a>
       <a asp-controller="Payment" asp-action="Confirm" class="btn btn-primary btn-lg">Go to confirmation</a>
 </div>
+<h3>Shipping Information</h3>
+<p>Street address: @Model.ShippingStreetAdress</p>
+<p>City: @Model.ShippingTownCity</p>
+<p>ZipCode: @Model.ShippingPostcode</p>
+<p>Country: @Model.ShippingCountry</p>
+-->
