@@ -38,11 +38,24 @@ $( document ).ready(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
-
+  
   $("#eu-btn").click(function() {
-    var dollar = $(".currency").html();
-    var euro = dollar * 0.84;
-    $(".currency").text("€" + euro);
+    var elements = $(".currency");
+    var currencySigns = $(".currency-sign");
+    var span;
+    var dollar;
+    var euro;
+    for(var i = 0; i < elements.length; i++) {
+      dollar = elements[i].innerHTML;
+      euro = (parseFloat(dollar) * 0.84).toFixed(2);
+
+      $(".currency")[i].innerHTML = euro;
+      span = $(".currency")[i].innerHTML;
+      $(".currency-sign")[i].innerHTML = "€" + span;
+
+      console.log('dollar=' + dollar);
+      console.log('euro=' + euro);
+    }
   });
 
   $('[lang="is"]').hide();

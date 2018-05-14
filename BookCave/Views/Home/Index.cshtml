@@ -22,7 +22,7 @@
                         <div id="book-details-frontpage">
                             <p><a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a></p>
                             <p>by <a asp-controller="Author" asp-action="Details" asp-route-id="@book.AuthorsId">@book.Author</a></p>
-                            <p><span class="currency">$@book.Price</span></p>
+                            <p class="currency-sign">$<span class="currency">@book.Price</span></p>
                         </div>
                     </div>
                 </div>
