@@ -40,22 +40,20 @@ $( document ).ready(function() {
   });
   
   $("#eu-btn").click(function() {
-    var elements = $(".currency");
+  /*  var elements = $(".currency");
     var currencySigns = $(".currency-sign");
     var span;
     var dollar;
     var euro;
-    for(var i = 0; i < elements.length; i++) {
-      dollar = elements[i].innerHTML;
-      euro = (parseFloat(dollar) * 0.84).toFixed(2);
+    dollar = elements.innerHTML;
+    euro = (parseFloat(dollar) * 0.84).toFixed(2);
 
-      $(".currency")[i].innerHTML = euro;
-      span = $(".currency")[i].innerHTML;
-      $(".currency-sign")[i].innerHTML = "€" + span;
+    $(".currency").innerHTML = euro;
+    span = $(".currency").innerHTML;
+    $(".currency-sign").innerHTML = "€" + span;
 
       console.log('dollar=' + dollar);
-      console.log('euro=' + euro);
-    }
+      console.log('euro=' + euro);*/
   });
 
   $('[lang="is"]').hide();
