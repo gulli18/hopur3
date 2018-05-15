@@ -127,5 +127,10 @@ namespace BookCave.Controllers
         {
             return View();
         }
+
+        public IActionResult Feedback()
+        {
+            return View();
+        }
     }
 }

@@ -53,9 +53,6 @@ $( document ).ready(function() {
       span = $(".currency")[i].innerHTML;
       $(".currency-sign")[i].innerHTML = "€" + span;
     }
-
-      console.log('dollar=' + dollar);
-      console.log('euro=' + euro);
   });
 
   $('[lang="is"]').hide();
@@ -329,6 +326,10 @@ function displayReviewOrder() {
   }
   $("#review-cart").html(output);
 }
+
+$("#confirm-order").click(function() {
+  clearCart();
+})
 
 /*$("#display-order").click(function() {
   console.log('i have clicked display order button');

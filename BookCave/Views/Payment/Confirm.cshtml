@@ -1,1 +1,23 @@
-<input type="submit" value="Confirm your order">
+<div class="row">
+    <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h3 id="review-heading">Confirmation</h3>
+        </div>
+     <div class="col-lg-4"></div>
+</div>
+<div class="row">
+    <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <p>Press "Confirm Order" to complete the payment process!</p>
+        </div>
+     <div class="col-lg-4"></div>
+</div>
+<div class="row" id="bla">
+    <div class="col-lg-3">
+            <a id="back-to-pay" asp-controller="Payment" asp-action="Review" class="btn btn-primary">Back To Review Order</a>
+    </div>
+    <div class="col-lg-6"></div>
+    <div class="col-lg-3">
+            <a id="confirm-order" asp-controller="Payment" asp-action="Feedback" class="btn btn-primary">Confirm Order</a>
+    </div>
+</div>
